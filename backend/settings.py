@@ -39,7 +39,13 @@ SECRET_KEY = 'django-insecure-@i=-)p@x#i6i*%x&2$#djt3u!_vj032_8cgp(436)0uwt!r4t4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-suredevelop-thrillseeke-vnokd5z90e6.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['8000-suredevelop-thrillseeke-vnokd5z90e6.ws.codeinstitute-ide.net',
+                
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-suredevelop-thrillseeke-vnokd5z90e6.ws.codeinstitute-ide.net',
+]
 
 
 # Application definition
@@ -53,6 +59,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'rest_framework',
 
     'profiles',
 ]
