@@ -22,7 +22,7 @@ class ParkSerializer(serializers.ModelSerializer):
 
     def get_is_owner(self, obj):
         request = self.context['request']
-        return request.user == obj.author
+        return request.user == obj.user
 
     class Meta:
         model = Park
