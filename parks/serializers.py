@@ -3,7 +3,7 @@ from .models import Park
 
 
 class ParkSerializer(serializers.ModelSerializer):
-    author = serializers.ReadOnlyField(source='author.username')
+    user = serializers.ReadOnlyField(source='author.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
 
@@ -27,7 +27,7 @@ class ParkSerializer(serializers.ModelSerializer):
     class Meta:
         model = Park
         fields = [
-            'id', 'author', 'name', 'description', 
+            'id', 'user', 'name', 'description', 
             'image', 'street', 'city', 'postal_code',
             'country', 'opening_hours', 'entrance_fees',
             'total_number_of_rides', 
