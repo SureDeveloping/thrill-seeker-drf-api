@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Park(models.Model):
     """
-    Parking model, related to the "author", superuser
+    Park model, related to the "author", superuser
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE)   
     name = models.CharField(max_length=255)
