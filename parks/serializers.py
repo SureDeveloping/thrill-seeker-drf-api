@@ -3,9 +3,9 @@ from .models import Park
 
 
 class ParkSerializer(serializers.ModelSerializer):
-    user = serializers.ReadOnlyField(source='author.username')
+    user = serializers.ReadOnlyField(source='user.username')
     is_owner = serializers.SerializerMethodField()
-    profile_id = serializers.ReadOnlyField(source='owner.profile.id')
+    profile_id = serializers.ReadOnlyField(source='user.profile.id')
 
     def validate_image(self, value):
         if value.size > 1024 * 1024:
