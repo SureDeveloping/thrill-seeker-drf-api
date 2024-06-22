@@ -22,7 +22,6 @@ class Rating(models.Model):
 
     class Meta:
         ordering = ['-created_at']
-        unique_together = ['user', 'park']
 
     def __str__(self):
         return self.explanation

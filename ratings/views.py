@@ -1,4 +1,5 @@
-from rest_framework import generics, permissions
+from rest_framework import generics, permissions, serializers
+from django.db import IntegrityError
 from backend.permissions import IsOwnerOrReadOnly
 from .models import Rating
 from .serializers import RatingSerializer, RatingDetailSerializer
@@ -15,7 +16,16 @@ class RatingList(generics.ListCreateAPIView):
     queryset = Rating.objects.all()
 
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
+        user = self.request.user
+        park = serializer.validated_data['park']
+
+        existing_rating = Rating.objects.filter(user=user, park=park).exists()
+        if existing_rating:
+            raise serializers.ValidationError({
+                'detail': 'You have already rated this park.'
+            })
+
+        serializer.save(user=user)
 
 
 class RatingDetail(generics.RetrieveUpdateDestroyAPIView):
