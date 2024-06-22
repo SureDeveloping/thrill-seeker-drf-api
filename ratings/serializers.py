@@ -1,3 +1,4 @@
+from django.db import IntegrityError
 from rest_framework import serializers
 from .models import Rating
 
@@ -24,6 +25,14 @@ class RatingSerializer(serializers.ModelSerializer):
             'profile_id', 'profile_picture',
             'created_at', 'updated_at', 
         ]
+
+    def create(self, validated_data):
+        try:
+            return super().create(validated_data)
+        except IntegrityError:
+            raise serializers.ValidationError({
+                'detail': 'Duplicate rating for this park by this user'
+            })
 
 class RatingDetailSerializer(RatingSerializer):
     """
