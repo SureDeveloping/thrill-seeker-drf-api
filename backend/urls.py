@@ -23,4 +23,5 @@ urlpatterns = [
     path('', include('parks.urls')),
     path('', include('ratings.urls')),
     path('', include('likes.urls')),
+    path('', include('bucketlist.urls')),
 ]
