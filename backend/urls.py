@@ -24,4 +24,5 @@ urlpatterns = [
     path('', include('ratings.urls')),
     path('', include('likes.urls')),
     path('', include('bucketlist.urls')),
+    path('', include('contact.urls')),
 ]
