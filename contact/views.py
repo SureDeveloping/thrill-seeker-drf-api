@@ -1,6 +1,7 @@
 from rest_framework import generics
 from .models import ContactForm
 from .serializers import ContactFormSerializer
+from rest_framework import permissions
 
 # Create your views here.
 
