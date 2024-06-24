@@ -2,6 +2,7 @@ from rest_framework import generics, permissions
 from backend.permissions import IsOwnerOrReadOnly
 from .models import Rating
 from .serializers import RatingSerializer, RatingDetailSerializer
+from django_filters.rest_framework import DjangoFilterBackend
 
 # Create your views here.
 
@@ -16,6 +17,15 @@ class RatingList(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+
+    filter_backends = [
+            DjangoFilterBackend,
+    ]
+
+    filterset_fields = [
+        'user__profile',
+        'park', 
+    ]
 
 class RatingDetail(generics.RetrieveUpdateDestroyAPIView):
     """
