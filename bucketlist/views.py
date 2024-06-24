@@ -2,7 +2,7 @@ from rest_framework import generics, permissions
 from backend.permissions import IsOwnerOrReadOnly
 from bucketlist.models import Bucketlist
 from bucketlist.serializers import BucketlistSerializer
-
+from django_filters.rest_framework import DjangoFilterBackend
 
 # Create your models here.
 
@@ -17,6 +17,14 @@ class BucketlistList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
+    filter_backends = [
+            DjangoFilterBackend,
+    ]
+
+    filterset_fields = [
+        'user__profile',
+        'park', 
+    ]
 
 class BucketlistDetail(generics.RetrieveDestroyAPIView):
     """
