@@ -29,7 +29,6 @@ class ParkSerializer(serializers.ModelSerializer):
         return request.user == obj.user
 
     def get_bucketlist_id(self, obj):
-        bucketlist = None
         user = self.context['request'].user
         if user.is_authenticated:
             bucketlist = Bucketlist.objects.filter(
@@ -39,7 +38,6 @@ class ParkSerializer(serializers.ModelSerializer):
         return None
 
     def get_rating_id(self, obj):
-        rating = None
         user = self.context['request'].user
         if user.is_authenticated:
             rating = Rating.objects.filter(
