@@ -1,4 +1,5 @@
-from rest_framework import generics, permissions
+from django.db.models import Count, Avg
+from rest_framework import generics, permissions, filters
 from .models import Park
 from .serializers import ParkSerializer
 from backend.permissions import IsOwnerOrReadOnly
@@ -7,7 +8,22 @@ from backend.permissions import IsOwnerOrReadOnly
 
 class ParkList(generics.ListCreateAPIView):
     serializer_class = ParkSerializer
-    queryset = Park.objects.all()
+    queryset = Park.objects.annotate(
+        ratings_count=Count('rating', distinct=True),
+        average_rating=Avg('rating__rating'),
+        bucketlist_count=Count('bucketlist', distinct=True)
+    ).order_by('-created_at')
+
+    filter_backends = [
+        filters.OrderingFilter,
+        
+    ]
+
+    ordering_fields = [
+        'bucketlist_count',
+        'ratings_count',
+        'average_rating',
+    ]
 
     def get_permissions(self):
         if self.request.method == 'POST':
@@ -19,7 +35,12 @@ class ParkList(generics.ListCreateAPIView):
 
 class ParkDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ParkSerializer
-    queryset = Park.objects.all()
+    queryset = Park.objects.annotate(
+        ratings_count=Count('rating', distinct=True),
+        average_rating=Avg('rating__rating'),
+        bucketlist_count=Count('bucketlist', distinct=True)
+    ).order_by('-created_at')
+
 
     def get_permissions(self):
         if self.request.method in ['PUT', 'PATCH', 'DELETE']:

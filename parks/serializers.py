@@ -10,6 +10,9 @@ class ParkSerializer(serializers.ModelSerializer):
     profile_id = serializers.ReadOnlyField(source='user.profile.id')
     bucketlist_id = serializers.SerializerMethodField()
     rating_id = serializers.SerializerMethodField()
+    ratings_count = serializers.ReadOnlyField()
+    average_rating = serializers.ReadOnlyField()
+    bucketlist_count = serializers.ReadOnlyField()
 
     def validate_image(self, value):
         if value.size > 1024 * 1024:
@@ -57,5 +60,6 @@ class ParkSerializer(serializers.ModelSerializer):
             'total_number_of_shows', 
             'total_number_of_children_rides', 'park_size',            
             'created_at', 'updated_at', 'is_owner', 'profile_id',
-            'bucketlist_id', 'rating_id',
+            'bucketlist_id', 'rating_id', 'ratings_count',
+            'bucketlist_count', 'average_rating',
         ]
