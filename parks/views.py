@@ -16,7 +16,13 @@ class ParkList(generics.ListCreateAPIView):
 
     filter_backends = [
         filters.OrderingFilter,
-        
+        filters.SearchFilter, 
+    ]
+
+    search_fields = [
+        'user__username',
+        'name',
+        'country',
     ]
 
     ordering_fields = [
