@@ -1,11 +1,13 @@
 from rest_framework import serializers
 from .models import Park
+from bucketlist.models import Bucketlist
 
 
 class ParkSerializer(serializers.ModelSerializer):
     user = serializers.ReadOnlyField(source='user.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='user.profile.id')
+    bucketlist_id = serializers.SerializerMethodField()
 
     def validate_image(self, value):
         if value.size > 1024 * 1024:
@@ -24,6 +26,16 @@ class ParkSerializer(serializers.ModelSerializer):
         request = self.context['request']
         return request.user == obj.user
 
+    def get_bucketlist_id(self, obj):
+        bucketlist = None
+        user = self.context['request'].user
+        if user.is_authenticated:
+            bucketlist = Bucketlist.objects.filter(
+                user=user, park=obj
+            ).first()
+            return bucketlist.id if bucketlist else None
+        return None
+
     class Meta:
         model = Park
         fields = [
@@ -35,4 +47,5 @@ class ParkSerializer(serializers.ModelSerializer):
             'total_number_of_shows', 
             'total_number_of_children_rides', 'park_size',            
             'created_at', 'updated_at', 'is_owner', 'profile_id',
+            'bucketlist_id',
         ]
