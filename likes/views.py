@@ -2,6 +2,7 @@ from rest_framework import generics, permissions
 from backend.permissions import IsOwnerOrReadOnly
 from likes.models import Like
 from likes.serializers import LikeSerializer
+from django_filters.rest_framework import DjangoFilterBackend
 
 # Create your views here.
 
@@ -15,6 +16,15 @@ class LikeList(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+
+    filter_backends = [
+            DjangoFilterBackend,
+    ]
+
+    filterset_fields = [
+        'user__profile',
+        'rating', 
+    ]
 
 
 class LikeDetail(generics.RetrieveDestroyAPIView):
