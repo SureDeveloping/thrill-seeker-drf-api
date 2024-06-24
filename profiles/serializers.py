@@ -9,6 +9,19 @@ class ProfileSerializer(serializers.ModelSerializer):
     bucketlist_count = serializers.ReadOnlyField()
     like_count = serializers.ReadOnlyField()
 
+    def validate_profile_picture(self, value):
+        if value.size > 1024 * 1024:
+            raise serializers.ValidationError('Image size larger than 1MB!')
+        if value.image.height > 2048:
+            raise serializers.ValidationError(
+                'Image height larger than 2048px!'
+            )
+        if value.image.width > 2048:
+            raise serializers.ValidationError(
+                'Image width larger than 2048px!'
+            )
+        return value
+
     def get_is_owner(self, obj):
         request = self.context['request']
         return request.user == obj.user
