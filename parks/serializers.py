@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Park
 from bucketlist.models import Bucketlist
+from ratings.models import Rating
 
 
 class ParkSerializer(serializers.ModelSerializer):
@@ -8,6 +9,7 @@ class ParkSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='user.profile.id')
     bucketlist_id = serializers.SerializerMethodField()
+    rating_id = serializers.SerializerMethodField()
 
     def validate_image(self, value):
         if value.size > 1024 * 1024:
@@ -36,6 +38,16 @@ class ParkSerializer(serializers.ModelSerializer):
             return bucketlist.id if bucketlist else None
         return None
 
+    def get_rating_id(self, obj):
+        rating = None
+        user = self.context['request'].user
+        if user.is_authenticated:
+            rating = Rating.objects.filter(
+                user=user, park=obj
+            ).first()
+            return rating.id if rating else None
+        return None
+
     class Meta:
         model = Park
         fields = [
@@ -47,5 +59,5 @@ class ParkSerializer(serializers.ModelSerializer):
             'total_number_of_shows', 
             'total_number_of_children_rides', 'park_size',            
             'created_at', 'updated_at', 'is_owner', 'profile_id',
-            'bucketlist_id',
+            'bucketlist_id', 'rating_id',
         ]
