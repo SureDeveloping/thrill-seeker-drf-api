@@ -75,7 +75,7 @@ DEBUG = 'DEV' in os.environ
 
 
 ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST'),
-                 'https://8000-suredevelop-thrillseeke-vnokd5z90e6.ws.codeinstitute-ide.net',
+                 '8000-suredevelop-thrillseeke-vnokd5z90e6.ws.codeinstitute-ide.net',
                              
 ]
 
