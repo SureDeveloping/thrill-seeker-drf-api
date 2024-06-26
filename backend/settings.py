@@ -76,8 +76,8 @@ DEBUG = True
 # DEBUG = 'DEV' in os.environ
 
 
-ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST'),
-               
+ALLOWED_HOSTS = ['https://8000-suredevelop-thrillseeke-vnokd5z90e6.ws.codeinstitute-ide.net',
+                 'thrill-seekers-api-5fd87044d4ac.herokuapp.com',               
 ]
 
 CSRF_TRUSTED_ORIGINS = [
