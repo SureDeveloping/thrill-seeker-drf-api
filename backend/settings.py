@@ -83,7 +83,7 @@ ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST'),
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-suredevelop-thrillseeke-vnokd5z90e6.ws.codeinstitute-ide.net',
-    'https://thrill-seekers-api-5fd87044d4ac.herokuapp.com/',
+    'https://thrill-seekers-api-5fd87044d4ac.herokuapp.com',
 ]
 
 
