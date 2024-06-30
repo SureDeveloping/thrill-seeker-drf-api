@@ -78,7 +78,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST'),
                  '8000-suredevelop-thrillseeke-vnokd5z90e6.ws.codeinstitute-ide.net',
-                             
+                 'localhost',      
 ]
 
 CSRF_TRUSTED_ORIGINS = [
