@@ -131,8 +131,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-if 'CLIENT_ORIGIN_DEV' in os.environ:
-    CORS_ALLOWED_ORIGIN = os.environ.get('CLIENT_ORIGIN_DEV', '')
+CORS_ALLOWED_ORIGINS = [os.environ.get('CLIENT_ORIGIN_DEV', '')]
+
+# if 'CLIENT_ORIGIN_DEV' in os.environ:
+#     CORS_ALLOWED_ORIGINS = os.environ.get('CLIENT_ORIGIN_DEV', '')
 
 #url need to change depending on the gitpod url.
 
