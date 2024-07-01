@@ -137,6 +137,14 @@ CORS_ALLOWED_ORIGINS = [os.environ.get('CLIENT_ORIGIN_DEV', '')]
 #     CORS_ALLOWED_ORIGINS = os.environ.get('CLIENT_ORIGIN_DEV', '')
 
 #url need to change depending on the gitpod url.
+#later when you finiosh the project and want to deploy it you would need to change this:
+#CORS_ALLOWED_ORIGINS = [os.environ.get('CLIENT_ORIGIN_DEV', '')]
+#to:
+#CORS_ALLOWED_ORIGINS = [os.environ.get('CLIENT_ORIGIN', '')]
+#and set CLIENT_ORIGIN as your deployed react url
+
+
+
 
 CORS_ALLOW_CREDENTIALS = True
 
