@@ -11,7 +11,7 @@ class Profile(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     profile_picture = models.ImageField(
-        upload_to = 'images/', default='../profile_default_o7qozg'
+        upload_to = 'images/', default='../profile_default_lmjx9e'
     )
 
     class Meta:
