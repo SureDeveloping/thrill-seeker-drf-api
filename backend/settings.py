@@ -139,7 +139,7 @@ if 'CLIENT_ORIGIN' in os.environ:
 CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.codeinstitute-ide\.net$",]
 
 
-# CORS_ALLOWED_ORIGINS = [os.environ.get('CLIENT_ORIGIN_DEV', '')]      
+# CORS_ALLOWED_ORIGINS = [os.environ.get('CLIENT_ORIGIN_DEV', '')]   - old   
 
 # if 'CLIENT_ORIGIN_DEV' in os.environ:
 #     CORS_ALLOWED_ORIGINS = os.environ.get('CLIENT_ORIGIN_DEV', '')
