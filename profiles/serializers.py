@@ -33,5 +33,5 @@ class ProfileSerializer(serializers.ModelSerializer):
             'id', 'user', 'favorite_park', 'favorite_ride', 
             'userbio', 'created_at', 'updated_at', 
             'profile_picture', 'is_owner', 'ratings_count',
-            'bucketlist_count', 'like_count',
+            'bucketlist_count', 'like_count', 'is_staff'
         ]
