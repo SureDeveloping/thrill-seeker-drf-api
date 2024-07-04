@@ -8,7 +8,6 @@ class ProfileSerializer(serializers.ModelSerializer):
     ratings_count = serializers.ReadOnlyField()
     bucketlist_count = serializers.ReadOnlyField()
     like_count = serializers.ReadOnlyField()
-    is_staff = serializers.BooleanField(read_only=True)
 
     def validate_profile_picture(self, value):
         if value.size > 1024 * 1024:
@@ -34,5 +33,5 @@ class ProfileSerializer(serializers.ModelSerializer):
             'id', 'user', 'favorite_park', 'favorite_ride', 
             'userbio', 'created_at', 'updated_at', 
             'profile_picture', 'is_owner', 'ratings_count',
-            'bucketlist_count', 'like_count', 'is_staff'
+            'bucketlist_count', 'like_count',
         ]
