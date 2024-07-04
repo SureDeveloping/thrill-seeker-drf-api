@@ -79,12 +79,12 @@ ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST'),
                  'localhost',      
 ]
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://8000-suredevelop-thrillseeke-vnokd5z90e6.ws.codeinstitute-ide.net',
-    'https://thrill-seekers-api-5fd87044d4ac.herokuapp.com',
-    'localhost',    
+# CSRF_TRUSTED_ORIGINS = [
+#     'https://8000-suredevelop-thrillseeke-vnokd5z90e6.ws.codeinstitute-ide.net',
+#     'https://thrill-seekers-api-5fd87044d4ac.herokuapp.com',
+#     'localhost',    
     
-]
+# ]
 
 CSRF_TRUSTED_ORIGINS = [os.environ.get('CLIENT_ORIGIN_DEV', 'CLIENT_ORIGIN')]
 
@@ -143,8 +143,8 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
     
     CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.codeinstitute-ide\.net$",]
 
-# CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.codeinstitute-ide\.net$",]
 
+# CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.codeinstitute-ide\.net$",]
 
 # CORS_ALLOWED_ORIGINS = [os.environ.get('CLIENT_ORIGIN_DEV', '')]   - old   
 
