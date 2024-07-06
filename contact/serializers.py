@@ -15,10 +15,11 @@ class ContactFormSerializer(serializers.ModelSerializer):
         model = ContactForm
         fields = ["id", "first_name", "last_name",
             "email", "subject", "message",
-            "created_at", 'edit_token',
+            "created_at", "edit_token",
         ]
 
-        read_only_fields = ["id", "created_at", 'edit_token']
+        read_only_fields = ["id", "created_at", "edit_token"
+        ]
 
         extra_kwargs = {
             "first_name": {
@@ -53,7 +54,6 @@ class ContactFormSerializer(serializers.ModelSerializer):
             f"Subject: {contact.subject}\n"
             f"Message:\n{contact.message}\n"
             f"Created at: {contact.created_at}\n"
-            f"Edit Token: {contact.edit_token}\n"
         )
         try:
             send_mail(subject, message, contact.email, [ADMIN_EMAIL])
