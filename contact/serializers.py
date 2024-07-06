@@ -15,10 +15,10 @@ class ContactFormSerializer(serializers.ModelSerializer):
         model = ContactForm
         fields = ["id", "first_name", "last_name",
             "email", "subject", "message",
-            "created_at",
+            "created_at", 'edit_token',
         ]
 
-        read_only_fields = ["id", "created_at"]
+        read_only_fields = ["id", "created_at", 'edit_token']
 
         extra_kwargs = {
             "first_name": {
@@ -42,16 +42,7 @@ class ContactFormSerializer(serializers.ModelSerializer):
         """
         Creates contact form and send it via email to the admin.
         """
-        first_name = validated_data["first_name"]
-        last_name = validated_data["last_name"]
-        email = validated_data["email"]
-        subject = validated_data["subject"]
-        message = validated_data["message"]
-
-        contact = ContactForm.objects.create(
-            first_name=first_name, last_name=last_name, email=email,
-            subject=subject, message=message
-        )
+        contact = ContactForm.objects.create(**validated_data)
 
         # Send email
         subject = f"New Contact Form Submission: {contact.subject}"
@@ -62,6 +53,7 @@ class ContactFormSerializer(serializers.ModelSerializer):
             f"Subject: {contact.subject}\n"
             f"Message:\n{contact.message}\n"
             f"Created at: {contact.created_at}\n"
+            f"Edit Token: {contact.edit_token}\n"
         )
         try:
             send_mail(subject, message, contact.email, [ADMIN_EMAIL])

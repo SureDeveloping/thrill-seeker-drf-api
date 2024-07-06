@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from django.core.validators import EmailValidator
 from django.core.mail import send_mail
@@ -23,6 +24,7 @@ class ContactForm(models.Model):
     subject = models.CharField(max_length=50, choices=SUBJECT_CHOICES)
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+    edit_token = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
 
     class Meta:
         ordering = ["-created_at"]
@@ -42,6 +44,7 @@ def send_contact_email(sender, instance, created, **kwargs):
             f"Subject: {instance.subject}\n\n"
             f"Message:\n{instance.message}\n"
             f"Created at: {instance.created_at}\n"
+            f"Edit Token: {instance.edit_token}\n"
         )
         from_email = instance.email
         to_email = [settings.ADMIN_EMAIL]
