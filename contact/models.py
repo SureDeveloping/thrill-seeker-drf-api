@@ -24,7 +24,7 @@ class ContactForm(models.Model):
     subject = models.CharField(max_length=50, choices=SUBJECT_CHOICES)
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
-    edit_token = models.UUIDField(default=uuid.uuid1, editable=False, unique=True)
+    edit_token = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
 
 
 
