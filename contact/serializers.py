@@ -10,6 +10,7 @@ class ContactFormSerializer(serializers.ModelSerializer):
     """
     Contact form serializer.
     """
+    edit_token = serializers.SerializerMethodField()
 
     class Meta:
         model = ContactForm
@@ -39,25 +40,28 @@ class ContactFormSerializer(serializers.ModelSerializer):
             },
         }
 
-    def create(self, validated_data):
-        """
-        Creates contact form and send it via email to the admin.
-        """
-        contact = ContactForm.objects.create(**validated_data)
+def get_edit_token(self, obj):
+    return str(obj.edit_token)
 
-        # Send email
-        subject = f"New Contact Form Submission: {contact.subject}"
-        message = (
-            f"First Name: {contact.first_name}\n"
-            f"Last Name: {contact.last_name}\n"
-            f"Email: {contact.email}\n"
-            f"Subject: {contact.subject}\n"
-            f"Message:\n{contact.message}\n"
-            f"Created at: {contact.created_at}\n"
-        )
-        try:
-            send_mail(subject, message, contact.email, [ADMIN_EMAIL])
-        except Exception as e:
-            print(f"Failed to send Contact Form, Please try again {e}")
+def create(self, validated_data):
+    """
+    Creates contact form and send it via email to the admin.
+    """
+    contact = ContactForm.objects.create(**validated_data)
 
-        return contact
+    # Send email
+    subject = f"New Contact Form Submission: {contact.subject}"
+    message = (
+        f"First Name: {contact.first_name}\n"
+        f"Last Name: {contact.last_name}\n"
+        f"Email: {contact.email}\n"
+        f"Subject: {contact.subject}\n"
+        f"Message:\n{contact.message}\n"
+        f"Created at: {contact.created_at}\n"           
+    )
+    try:
+        send_mail(subject, message, contact.email, [ADMIN_EMAIL])
+    except Exception as e:
+        print(f"Failed to send Contact Form, Please try again {e}")
+
+    return contact

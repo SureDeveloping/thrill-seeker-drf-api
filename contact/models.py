@@ -8,9 +8,6 @@ import uuid
 
 # Create your models here.
 
-def generate_unique_token():
-    return str(uuid.uuid4())
-
 class ContactForm(models.Model):
     """
     Contact Form to send a message to the website owner
