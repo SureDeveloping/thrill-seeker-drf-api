@@ -10,16 +10,15 @@ class ContactFormSerializer(serializers.ModelSerializer):
     """
     Contact form serializer.
     """
-    edit_token = serializers.SerializerMethodField()
 
     class Meta:
         model = ContactForm
         fields = ["id", "first_name", "last_name",
             "email", "subject", "message",
-            "created_at", "edit_token",
+            "created_at",
         ]
 
-        read_only_fields = ["id", "created_at", "edit_token"
+        read_only_fields = ["id", "created_at",
         ]
 
         extra_kwargs = {
@@ -57,8 +56,7 @@ class ContactFormSerializer(serializers.ModelSerializer):
             f"Email: {contact.email}\n"
             f"Subject: {contact.subject}\n"
             f"Message:\n{contact.message}\n"
-            f"Created at: {contact.created_at}\n"
-            f"Edit Token: {contact.edit_token}\n"           
+            f"Created at: {contact.created_at}\n"         
         )
         
         try:

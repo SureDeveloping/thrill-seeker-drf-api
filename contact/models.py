@@ -4,7 +4,7 @@ from django.core.mail import send_mail
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.conf import settings
-import uuid
+
 
 # Create your models here.
 
@@ -24,9 +24,6 @@ class ContactForm(models.Model):
     subject = models.CharField(max_length=50, choices=SUBJECT_CHOICES)
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
-    edit_token = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
-
-
 
     class Meta:
         ordering = ["-created_at"]
