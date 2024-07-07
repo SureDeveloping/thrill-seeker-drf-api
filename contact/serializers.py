@@ -19,6 +19,11 @@ class ContactFormSerializer(serializers.ModelSerializer):
             "created_at", "edit_token",
         ]
 
+        def get_edit_token(self, obj):
+            print("Inside get_edit_token")
+            return str(obj.edit_token)
+
+
         read_only_fields = ["id", "created_at", "edit_token"
         ]
 

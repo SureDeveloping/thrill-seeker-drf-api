@@ -13,6 +13,10 @@ class ContactFormList(generics.ListCreateAPIView):
     serializer_class = ContactFormSerializer
     permission_classes = [permissions.AllowAny]
 
+    def get_serializer_class(self):
+        print("Inside ContactFormList get_serializer_class")
+        return self.serializer_class
+
 class ContactFormDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     Retrieve Update and Destroy contact form
@@ -21,5 +25,10 @@ class ContactFormDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ContactFormSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-def perform_update(self, serializer):
-    instance = serializer.save()
+    def get_serializer_class(self):
+        print("Inside ContactFormDetail get_serializer_class")
+        return self.serializer_class
+
+    def perform_update(self, serializer):
+        print("Inside perform_update")
+        instance = serializer.save()
