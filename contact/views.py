@@ -1,6 +1,7 @@
 from rest_framework import generics, permissions
 from .models import ContactForm
 from .serializers import ContactFormSerializer
+from .permissions import IsOwnerOrTokenValid
 
 
 # Create your views here.
@@ -19,7 +20,7 @@ class ContactFormDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     queryset = ContactForm.objects.all()
     serializer_class = ContactFormSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [IsOwnerOrTokenValid]
 
-def perform_update(self, serializer):
-    instance = serializer.save()
+    def perform_update(self, serializer):
+        instance = serializer.save()
