@@ -57,7 +57,8 @@ class ContactFormSerializer(serializers.ModelSerializer):
             f"Email: {contact.email}\n"
             f"Subject: {contact.subject}\n"
             f"Message:\n{contact.message}\n"
-            f"Created at: {contact.created_at}\n"           
+            f"Created at: {contact.created_at}\n"
+            f"Edit Token: {contact.edit_token}\n"           
         )
         
         try:
