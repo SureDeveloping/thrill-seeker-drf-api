@@ -31,5 +31,5 @@ urlpatterns = [
     path('api/', include('ratings.urls')),
     path('api/', include('likes.urls')),
     path('api/', include('bucketlist.urls')),
-    # path('api/', include('contact.urls')),
+    path('api/', include('contact.urls')),
 ]
