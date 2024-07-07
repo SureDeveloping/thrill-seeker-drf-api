@@ -1,7 +1,7 @@
 from rest_framework import generics, permissions
 from .models import ContactForm
 from .serializers import ContactFormSerializer
-from .permissions import IsOwnerOrTokenValid
+from backend.permissions import IsOwnerOrTokenValid
 
 
 # Create your views here.
