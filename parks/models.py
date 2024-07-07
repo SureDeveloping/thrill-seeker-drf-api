@@ -13,25 +13,10 @@ class Park(models.Model):
     image = models.ImageField(
         upload_to='images/', default='', blank=True
     )
-    # Address fields
-    street = models.CharField(max_length=255, blank=True)
-    city = models.CharField(max_length=100, blank=True)
-    postal_code = models.CharField(max_length=20, blank=True)
-    country = models.CharField(max_length=100, blank=True)
-
-    # Good to know
-    opening_hours = models.TextField(max_length=255, blank=True)
-    entrance_fees = models.TextField(max_length=255, blank=True)
-
-    # Other interesting data 
+    website = models.URLField(max_length=200, blank=True)
     total_number_of_rides = models.IntegerField(blank=True, null=True)
-    total_number_of_roller_coasters = models.IntegerField(blank=True, null=True)
-    total_number_of_shows = models.IntegerField(blank=True, null=True)
-    total_number_of_children_rides = models.IntegerField(blank=True, null=True)
-    park_size = models.FloatField(blank=True, null=True)
 
     # Ratings
-    family_friendliness = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True)
     thrill_factor = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True)
     overall_rating = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True)
 

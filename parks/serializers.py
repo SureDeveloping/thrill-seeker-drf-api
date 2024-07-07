@@ -3,7 +3,6 @@ from .models import Park
 from bucketlist.models import Bucketlist
 from ratings.models import Rating
 
-
 class ParkSerializer(serializers.ModelSerializer):
     user = serializers.ReadOnlyField(source='user.username')
     is_owner = serializers.SerializerMethodField()
@@ -52,13 +51,8 @@ class ParkSerializer(serializers.ModelSerializer):
     class Meta:
         model = Park
         fields = [
-            'id', 'user', 'name', 'description', 
-            'image', 'street', 'city', 'postal_code',
-            'country', 'opening_hours', 'entrance_fees',
-            'total_number_of_rides', 
-            'total_number_of_roller_coasters',
-            'total_number_of_shows', 
-            'total_number_of_children_rides', 'park_size',            
+            'id', 'user', 'name', 'description', 'image', 'website',
+            'total_number_of_rides', 'thrill_factor', 'overall_rating',
             'created_at', 'updated_at', 'is_owner', 'profile_id',
             'bucketlist_id', 'rating_id', 'ratings_count',
             'bucketlist_count', 'average_rating',

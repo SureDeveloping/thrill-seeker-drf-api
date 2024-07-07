@@ -22,13 +22,14 @@ class ParkList(generics.ListCreateAPIView):
     search_fields = [
         'user__username',
         'name',
-        'country',
     ]
 
     ordering_fields = [
         'bucketlist_count',
         'ratings_count',
         'average_rating',
+        'thrill_factor',
+        'overall_rating',
     ]
 
     def get_permissions(self):
@@ -46,7 +47,6 @@ class ParkDetail(generics.RetrieveUpdateDestroyAPIView):
         average_rating=Avg('rating__rating'),
         bucketlist_count=Count('bucketlist', distinct=True)
     ).order_by('-created_at')
-
 
     def get_permissions(self):
         if self.request.method in ['PUT', 'PATCH', 'DELETE']:
