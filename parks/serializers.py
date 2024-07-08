@@ -57,5 +57,5 @@ class ParkSerializer(serializers.ModelSerializer):
             'thrill_factor', 'overall_rating',
             'created_at', 'updated_at', 'is_owner', 'profile_id',
             'bucketlist_id', 'rating_id', 'ratings_count',
-            'bucketlist_count', 'average_rating',
+            'bucketlist_count', 'average_rating', 'profile_picture',
         ]
