@@ -8,7 +8,7 @@ class ProfileSerializer(serializers.ModelSerializer):
     ratings_count = serializers.ReadOnlyField()
     bucketlist_count = serializers.ReadOnlyField()
     like_count = serializers.ReadOnlyField()
-    profile_picture = serializers.ImageField(source='user.profile.profile_picture', read_only=True)
+    profile_picture = serializers.ImageField()
 
     def validate_profile_picture(self, value):
         if value.size > 1024 * 1024:
