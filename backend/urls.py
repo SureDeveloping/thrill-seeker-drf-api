@@ -26,10 +26,10 @@ urlpatterns = [
     path(
         'dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')
     ),
-    path('api/', include('profiles.urls')),
-    path('api/', include('parks.urls')),
-    path('api/', include('ratings.urls')),
-    path('api/', include('likes.urls')),
-    path('api/', include('bucketlist.urls')),
+    path('', include('profiles.urls')),
+    path('', include('parks.urls')),
+    path('', include('ratings.urls')),
+    path('', include('likes.urls')),
+    path('', include('bucketlist.urls')),
     path('api/', include('contact.urls')),
 ]
