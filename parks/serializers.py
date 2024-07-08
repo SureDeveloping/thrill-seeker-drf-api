@@ -12,6 +12,7 @@ class ParkSerializer(serializers.ModelSerializer):
     ratings_count = serializers.ReadOnlyField()
     average_rating = serializers.ReadOnlyField()
     bucketlist_count = serializers.ReadOnlyField()
+    profile_picture = serializers.ReadOnlyField(source='user.profile.profile_picture.url')
 
     def validate_image(self, value):
         if value.size > 1024 * 1024:
