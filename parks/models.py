@@ -15,6 +15,7 @@ class Park(models.Model):
     )
     website = models.URLField(max_length=200, blank=True)
     total_number_of_rides = models.IntegerField(blank=True, null=True)
+    total_number_of_coasters = models.IntegerField(blank=True, null=True)
 
     # Ratings
     thrill_factor = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True)
