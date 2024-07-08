@@ -52,7 +52,8 @@ class ParkSerializer(serializers.ModelSerializer):
         model = Park
         fields = [
             'id', 'user', 'name', 'description', 'image', 'website',
-            'total_number_of_rides', 'thrill_factor', 'overall_rating',
+            'total_number_of_rides','total_number_of_coasters',
+            'thrill_factor', 'overall_rating',
             'created_at', 'updated_at', 'is_owner', 'profile_id',
             'bucketlist_id', 'rating_id', 'ratings_count',
             'bucketlist_count', 'average_rating',
