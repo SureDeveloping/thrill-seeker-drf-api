@@ -30,6 +30,6 @@ urlpatterns = [
     path('', include('parks.urls')),
     path('', include('ratings.urls')),
     path('', include('likes.urls')),
-    path('', include('bucketlist.urls')),
+    path('api/', include('bucketlist.urls')),
     path('api/', include('contact.urls')),
 ]
