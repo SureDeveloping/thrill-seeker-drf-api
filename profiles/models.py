@@ -8,7 +8,7 @@ class Profile(models.Model):
     userbio = models.TextField(blank=True)
     profile_picture = models.ImageField(
         upload_to='profile_pictures/', 
-        default='profile_pictures/profile_default_o7qozg.png', blank=True
+        default='media/images/profile_default_o6fet4', blank=True
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
