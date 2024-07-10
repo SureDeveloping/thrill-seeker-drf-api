@@ -22,6 +22,7 @@ class ParkList(generics.ListCreateAPIView):
     search_fields = [
         'user__username',
         'name',
+        'description',
     ]
 
     ordering_fields = [
