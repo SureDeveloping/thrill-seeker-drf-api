@@ -7,7 +7,7 @@ class Profile(models.Model):
     favorite_ride = models.CharField(max_length=255, blank=True)
     userbio = models.TextField(blank=True)
     profile_picture = models.ImageField(
-        upload_to='profile_pictures/', default='default_profile.jpg', blank=True
+        upload_to='profile_pictures/', default='profile_default_o7qozg.png', blank=True
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
