@@ -18,8 +18,8 @@ class Park(models.Model):
     total_number_of_coasters = models.IntegerField(blank=True, null=True)
 
     # Ratings
-    thrill_factor = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True)
-    overall_rating = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True)
+    thrill_factor = models.DecimalField(max_digits=3, decimal_places=1, blank=True, null=True)
+    overall_rating = models.DecimalField(max_digits=3, decimal_places=1, blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
