@@ -38,22 +38,24 @@ class RatingSerializer(serializers.ModelSerializer):
             return like.id if like else None
         return None
 
-    class Meta:
-        model = Rating
-        fields = [
-            'id', 'user', 'is_owner', 'park', 'rating', 
-            'last_visisted_at','explanation', 
-            'profile_id', 'profile_picture',
-            'created_at', 'updated_at', 'like_id',
-        ]
 
     def create(self, validated_data):
+        request = self.context.get('request')
+        validated_data['user'] = request.user
         try:
             return super().create(validated_data)
         except IntegrityError:
             raise serializers.ValidationError({
                 'detail': 'You have already rated this park.'
             })
+
+    class Meta:
+        model = Rating
+        fields = [
+            'id', 'user', 'is_owner', 'park', 'rating', 
+            'last_visisted_at','explanation', 
+            'profile_id', 'profile_picture',
+            'created_at', 'updated_at', 'like_id',]
 
 class RatingDetailSerializer(RatingSerializer):
     """
