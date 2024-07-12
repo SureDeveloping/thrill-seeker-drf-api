@@ -17,7 +17,7 @@ class RatingSerializer(serializers.ModelSerializer):
     like_id = serializers.SerializerMethodField()
     created_at =serializers.SerializerMethodField()
     updated_at =serializers.SerializerMethodField()
-
+    explanation = serializers.CharField(allow_blank=False)
     
     def get_is_owner(self, obj):
         request = self.context['request']

@@ -11,9 +11,10 @@ class Rating(models.Model):
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     park = models.ForeignKey(Park, on_delete=models.CASCADE)
-    explanation = models.TextField()
+    explanation = models.TextField(blank=False)
     rating = models.PositiveSmallIntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)],
+        default=1
     )
     last_visisted_at =  models.DateField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
