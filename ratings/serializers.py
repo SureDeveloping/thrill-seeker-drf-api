@@ -9,7 +9,7 @@ class RatingSerializer(serializers.ModelSerializer):
     """
     Serializer for the Rating model
     """
-    user = serializers.ReadOnlyField(source='owner.username')
+    user = serializers.ReadOnlyField(source='user.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='user.profile.id')
     profile_picture = serializers.ReadOnlyField(
