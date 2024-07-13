@@ -43,6 +43,10 @@ class RatingSerializer(serializers.ModelSerializer):
         request = self.context.get('request')
         validated_data['user'] = request.user
         try:
+            if 'explanation' not in validated_data or validated_data['explanation'].strip() == '':
+                raise serializers.ValidationError({
+                    'explanation': 'This field is required.'
+                })
             return super().create(validated_data)
         except IntegrityError:
             raise serializers.ValidationError({
