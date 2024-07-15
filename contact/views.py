@@ -1,29 +1,35 @@
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
+from rest_framework.decorators import action
+from rest_framework.views import APIView
 from .models import ContactForm
 from .serializers import ContactFormSerializer
 
-# Create your views here.
-
 class ContactFormList(generics.ListCreateAPIView):
     """
-    List create contact form
+    List and create contact forms.
     """
     queryset = ContactForm.objects.all()
     serializer_class = ContactFormSerializer
     permission_classes = [permissions.AllowAny]
 
-class FinalSubmitContactForm(generics.GenericAPIView):
+class ContactFormDetail(generics.RetrieveUpdateDestroyAPIView):
     """
-    Final submit of contact form
+    Retrieve, update, or delete a contact form instance.
     """
     queryset = ContactForm.objects.all()
     serializer_class = ContactFormSerializer
     permission_classes = [permissions.AllowAny]
 
-    def post(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+class FinalSubmitContactForm(APIView):
+    """
+    Handle the final submission of a contact form.
+    """
+    permission_classes = [permissions.AllowAny]
+
+    def post(self, request, pk=None):
+        try:
+            contact_form = ContactForm.objects.get(pk=pk)
+            return Response({'status': 'submitted', 'message': 'Contact form has been finally submitted.'}, status=status.HTTP_200_OK)
+        except ContactForm.DoesNotExist:
+            return Response({'error': 'Contact form not found'}, status=status.HTTP_404_NOT_FOUND)

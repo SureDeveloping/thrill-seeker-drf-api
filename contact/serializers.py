@@ -21,6 +21,11 @@ class ContactFormSerializer(serializers.ModelSerializer):
         read_only_fields = ["id", "created_at",
         ]
 
+        def validate_subject(self, value):
+            if value not in dict(ContactForm.SUBJECT_CHOICES):
+                raise serializers.ValidationError("Invalid subject choice.")
+            return value
+
         extra_kwargs = {
             "first_name": {
                 "error_messages": {"blank":  "This field is required"}
@@ -38,9 +43,6 @@ class ContactFormSerializer(serializers.ModelSerializer):
                 "error_messages": {"blank": "This field is required"}
             },
         }
-
-    def get_edit_token(self, obj):
-        return str(obj.edit_token)
 
     def create(self, validated_data):
         """
