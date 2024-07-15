@@ -27,9 +27,4 @@ class FinalSubmitContactForm(APIView):
     """
     permission_classes = [permissions.AllowAny]
 
-    def post(self, request, pk=None):
-        try:
-            contact_form = ContactForm.objects.get(pk=pk)
-            return Response({'status': 'submitted', 'message': 'Contact form has been finally submitted.'}, status=status.HTTP_200_OK)
-        except ContactForm.DoesNotExist:
-            return Response({'error': 'Contact form not found'}, status=status.HTTP_404_NOT_FOUND)
+  
