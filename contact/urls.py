@@ -4,6 +4,6 @@ from . import views
 
 urlpatterns = [
     path('contact/', views.ContactFormList.as_view(), name='contact-form-list'),
-    path('contact/<int:pk>/', views.ContactFormDetail.as_view(), name='contact-form-detail'),
-    path('contact/<int:pk>/final/', views.FinalSubmitContactForm.as_view(), name='final-submit-contact-form'),
+    path('contact/create/', views.ContactFormCreate.as_view(), name='contact-form-create'),
+    path('contact/update/<uuid:edit_token>/', views.ContactFormUpdate.as_view(), name='contact-form-update'),  
 ]
