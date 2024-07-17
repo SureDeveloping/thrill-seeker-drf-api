@@ -2,8 +2,6 @@ from rest_framework import serializers
 from .models import ContactForm
 import os
 from django.core.mail import send_mail
-from django.core.validators import EmailValidator
-from django.core.exceptions import ValidationError
 
 ADMIN_EMAIL = os.environ.get("EMAIL_ADDRESS")
 
@@ -23,6 +21,11 @@ class ContactFormSerializer(serializers.ModelSerializer):
         read_only_fields = ["id", "created_at",
         ]
 
+        def validate_subject(self, value):
+            if value not in dict(ContactForm.SUBJECT_CHOICES):
+                raise serializers.ValidationError("Invalid subject choice.")
+            return value
+
         extra_kwargs = {
             "first_name": {
                 "error_messages": {"blank":  "This field is required"}
@@ -40,19 +43,6 @@ class ContactFormSerializer(serializers.ModelSerializer):
                 "error_messages": {"blank": "This field is required"}
             },
         }
-
-    def validate_email(self, value):
-        email_validator = EmailValidator()
-        try:
-            email_validator(value)
-        except ValidationError:
-            raise serializers.ValidationError("Enter a valid email address.")
-        return value
-
-    def validate_subject(self, value):
-        if value not in dict(ContactForm.SUBJECT_CHOICES):
-            raise serializers.ValidationError("Invalid subject choice.")
-        return value
 
     def create(self, validated_data):
         """
