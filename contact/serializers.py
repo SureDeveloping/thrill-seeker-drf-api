@@ -2,6 +2,7 @@ from rest_framework import serializers
 from .models import ContactForm
 import os
 from django.core.mail import send_mail
+from django.core.exceptions import ValidationError
 
 ADMIN_EMAIL = os.environ.get("EMAIL_ADDRESS")
 
@@ -20,6 +21,15 @@ class ContactFormSerializer(serializers.ModelSerializer):
 
         read_only_fields = ["id", "created_at",
         ]
+
+        def validate_email(self, value):
+            try:
+                ContactForm(email=value).clean_fields(exclude
+                = ['first_name', 'last_name', 'subject', 'message'])
+
+            except ValidationError as e:
+                raise serializers.ValidationError(e.messages[0])
+            return value
 
         def validate_subject(self, value):
             if value not in dict(ContactForm.SUBJECT_CHOICES):
