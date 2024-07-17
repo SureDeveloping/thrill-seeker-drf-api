@@ -55,6 +55,11 @@ class ContactFormUpdate(generics.RetrieveUpdateAPIView):
         response_data['edit_token'] = str(instance.edit_token)
         return Response(response_data)
 
+    def destroy(self, request, *args, **kwargs):
+        instance = self.get_object()
+        self.perform_destroy(instance)
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
 class ContactFormList(generics.ListAPIView):
     """
     List all contact forms.
