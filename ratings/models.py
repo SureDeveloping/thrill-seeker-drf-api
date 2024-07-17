@@ -16,7 +16,6 @@ class Rating(models.Model):
         validators=[MinValueValidator(1), MaxValueValidator(5)],
         default=1
     )
-    last_visisted_at =  models.DateField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     

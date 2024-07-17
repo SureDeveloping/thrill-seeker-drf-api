@@ -57,7 +57,7 @@ class RatingSerializer(serializers.ModelSerializer):
         model = Rating
         fields = [
             'id', 'user', 'is_owner', 'park', 'rating', 
-            'last_visisted_at','explanation', 
+            'explanation', 
             'profile_id', 'profile_picture',
             'created_at', 'updated_at', 'like_id',]
 
