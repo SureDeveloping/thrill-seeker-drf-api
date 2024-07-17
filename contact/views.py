@@ -18,11 +18,13 @@ class ContactFormCreate(generics.CreateAPIView):
         headers = self.get_success_headers(serializer.data)
         response_data = serializer.data
         response_data['edit_token'] = serializer.instance.edit_token
-        return Response(response_data, status=status.HTTP_201_CREATED, headers=headers)
+        return Response(
+            response_data, status=status.HTTP_201_CREATED, headers=headers)
 
-class ContactFormUpdate(generics.RetrieveUpdateAPIView):
+class ContactFormUpdate(generics.RetrieveUpdateDestroyAPIView):
     """
-    Retrieve and update an existing contact form using the provided edit token.
+    Retrieve, update and delete an existing 
+    contact form using the provided edit token.
     """
     queryset = ContactForm.objects.all()
     serializer_class = ContactFormSerializer
@@ -44,7 +46,8 @@ class ContactFormUpdate(generics.RetrieveUpdateAPIView):
         partial = kwargs.pop('partial', False)
         instance = self.get_object()
 
-        serializer = self.get_serializer(instance, data=request.data, partial=partial)
+        serializer = self.get_serializer(
+            instance, data=request.data, partial=partial)
         serializer.is_valid(raise_exception=True)
         self.perform_update(serializer)
 
