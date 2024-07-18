@@ -1,14 +1,16 @@
 from rest_framework import serializers
 from .models import Profile
-
+from bucketlist.models import Bucketlist
+from ratings.models import Rating
 
 class ProfileSerializer(serializers.ModelSerializer):
     user = serializers.ReadOnlyField(source='user.username')
     is_owner = serializers.SerializerMethodField()
-    ratings_count = serializers.ReadOnlyField()
-    bucketlist_count = serializers.ReadOnlyField()
-    like_count = serializers.ReadOnlyField()
-    profile_picture = serializers.ImageField()
+    ratings_count = serializers.IntegerField(read_only=True)
+    bucketlist_count = serializers.IntegerField(read_only=True)
+    profile_picture = serializers.ImageField(required=False)
+    bucketlist = serializers.SerializerMethodField()
+    ratings = serializers.SerializerMethodField()
 
     def validate_profile_picture(self, value):
         if value.size > 1024 * 1024:
@@ -27,6 +29,29 @@ class ProfileSerializer(serializers.ModelSerializer):
         request = self.context['request']
         return request.user == obj.user
 
+    def get_bucketlist(self, obj):
+        bucketlist_items = Bucketlist.objects.filter(user=obj.user)
+        return [
+            {
+                'id': item.id,
+                'park': item.park.id,
+                'park_name': item.park.name
+            }
+            for item in bucketlist_items
+        ]
+
+    def get_ratings(self, obj):
+        ratings = Rating.objects.filter(user=obj.user)
+        return [
+            {
+                'id': rating.id,
+                'park': rating.park.id,
+                'park_name': rating.park.name,
+                'rating': rating.rating,
+                'explanation': rating.explanation
+            }
+            for rating in ratings
+        ]
 
     class Meta:
         model = Profile
@@ -34,5 +59,5 @@ class ProfileSerializer(serializers.ModelSerializer):
             'id', 'user', 'favorite_park', 'favorite_ride', 
             'userbio', 'created_at', 'updated_at', 
             'profile_picture', 'is_owner', 'ratings_count',
-            'bucketlist_count', 'like_count',
+            'bucketlist_count', 'bucketlist', 'ratings'
         ]

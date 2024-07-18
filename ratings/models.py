@@ -9,7 +9,8 @@ class Rating(models.Model):
     """
     Rating model, related to User and Park
     """
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='ratings')
     park = models.ForeignKey(Park, on_delete=models.CASCADE)
     explanation = models.TextField(blank=False)
     rating = models.PositiveSmallIntegerField(

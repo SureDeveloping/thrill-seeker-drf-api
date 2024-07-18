@@ -8,7 +8,8 @@ class Bucketlist(models.Model):
     """
     Bucketlist related to the "user" and "park" model
     """
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='bucketlist')
     park = models.ForeignKey(
         Park, related_name='bucketlist', on_delete=models.CASCADE
     )
