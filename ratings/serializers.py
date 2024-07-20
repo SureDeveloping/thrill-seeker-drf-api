@@ -4,7 +4,6 @@ from .models import Rating
 from likes.models import Like
 from django.contrib.humanize.templatetags.humanize import naturaltime
 
-
 class RatingSerializer(serializers.ModelSerializer):
     """
     Serializer for the Rating model
@@ -15,8 +14,9 @@ class RatingSerializer(serializers.ModelSerializer):
     profile_picture = serializers.ReadOnlyField(
         source='user.profile.profile_picture.url')
     like_id = serializers.SerializerMethodField()
-    created_at =serializers.SerializerMethodField()
-    updated_at =serializers.SerializerMethodField()
+    created_at = serializers.SerializerMethodField()
+    updated_at = serializers.SerializerMethodField()
+    park_name = serializers.ReadOnlyField(source='park.name')
     explanation = serializers.CharField(allow_blank=False)
     
     def get_is_owner(self, obj):
@@ -38,12 +38,12 @@ class RatingSerializer(serializers.ModelSerializer):
             return like.id if like else None
         return None
 
-
     def create(self, validated_data):
         request = self.context.get('request')
         validated_data['user'] = request.user
         try:
-            if 'explanation' not in validated_data or validated_data['explanation'].strip() == '':
+            if 'explanation' not in validated_data or validated_data[
+                'explanation'].strip() == '':
                 raise serializers.ValidationError({
                     'explanation': 'This field is required.'
                 })
@@ -56,10 +56,11 @@ class RatingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Rating
         fields = [
-            'id', 'user', 'is_owner', 'park', 'rating', 
-            'explanation', 
+            'id', 'user', 'is_owner', 'park', 'park_name',
+            'rating', 'explanation', 
             'profile_id', 'profile_picture',
-            'created_at', 'updated_at', 'like_id',]
+            'created_at', 'updated_at', 'like_id',
+        ]
 
 class RatingDetailSerializer(RatingSerializer):
     """
