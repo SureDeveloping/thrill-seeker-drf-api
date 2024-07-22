@@ -5,6 +5,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
 
+
 class Rating(models.Model):
     """
     Rating model, related to User and Park
@@ -19,7 +20,6 @@ class Rating(models.Model):
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    
 
     class Meta:
         ordering = ['-created_at']

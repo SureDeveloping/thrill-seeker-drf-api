@@ -4,6 +4,7 @@ from ratings.models import Rating
 
 # Create your models here.
 
+
 class Like(models.Model):
     """
     Like model, related to 'user' and 'rating'

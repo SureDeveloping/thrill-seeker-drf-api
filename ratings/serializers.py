@@ -4,6 +4,7 @@ from .models import Rating
 from likes.models import Like
 from django.contrib.humanize.templatetags.humanize import naturaltime
 
+
 class RatingSerializer(serializers.ModelSerializer):
     """
     Serializer for the Rating model
@@ -18,7 +19,7 @@ class RatingSerializer(serializers.ModelSerializer):
     updated_at = serializers.SerializerMethodField()
     park_name = serializers.ReadOnlyField(source='park.name')
     explanation = serializers.CharField(allow_blank=False)
-    
+
     def get_is_owner(self, obj):
         request = self.context['request']
         return request.user == obj.user
@@ -43,7 +44,7 @@ class RatingSerializer(serializers.ModelSerializer):
         validated_data['user'] = request.user
         try:
             if 'explanation' not in validated_data or validated_data[
-                'explanation'].strip() == '':
+                    'explanation'].strip() == '':
                 raise serializers.ValidationError({
                     'explanation': 'This field is required.'
                 })
@@ -57,10 +58,11 @@ class RatingSerializer(serializers.ModelSerializer):
         model = Rating
         fields = [
             'id', 'user', 'is_owner', 'park', 'park_name',
-            'rating', 'explanation', 
+            'rating', 'explanation',
             'profile_id', 'profile_picture',
             'created_at', 'updated_at', 'like_id',
         ]
+
 
 class RatingDetailSerializer(RatingSerializer):
     """

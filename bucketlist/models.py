@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from parks.models import Park
 
+
 # Create your models here.
 
 class Bucketlist(models.Model):

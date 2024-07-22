@@ -3,6 +3,7 @@ from .models import Park
 from bucketlist.models import Bucketlist
 from ratings.models import Rating
 
+
 class ParkSerializer(serializers.ModelSerializer):
     user = serializers.ReadOnlyField(source='user.username')
     is_owner = serializers.SerializerMethodField()
@@ -12,10 +13,13 @@ class ParkSerializer(serializers.ModelSerializer):
     ratings_count = serializers.ReadOnlyField()
     average_rating = serializers.ReadOnlyField()
     bucketlist_count = serializers.ReadOnlyField()
-    profile_picture = serializers.ReadOnlyField(source='user.profile.profile_picture.url')
+    profile_picture = serializers.ReadOnlyField(
+        source='user.profile.profile_picture.url')
 
-    thrill_factor = serializers.DecimalField(max_digits=3, decimal_places=1, read_only=False)
-    overall_rating = serializers.DecimalField(max_digits=3, decimal_places=1, read_only=False)
+    thrill_factor = serializers.DecimalField(
+        max_digits=3, decimal_places=1, read_only=False)
+    overall_rating = serializers.DecimalField(
+        max_digits=3, decimal_places=1, read_only=False)
 
     def validate_image(self, value):
         if value.size > 1024 * 1024:
@@ -56,7 +60,7 @@ class ParkSerializer(serializers.ModelSerializer):
         model = Park
         fields = [
             'id', 'user', 'name', 'description', 'image', 'website',
-            'total_number_of_rides','total_number_of_coasters',
+            'total_number_of_rides', 'total_number_of_coasters',
             'thrill_factor', 'overall_rating',
             'created_at', 'updated_at', 'is_owner', 'profile_id',
             'bucketlist_id', 'rating_id', 'ratings_count',

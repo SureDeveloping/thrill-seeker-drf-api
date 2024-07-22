@@ -2,6 +2,7 @@ from django.db import IntegrityError
 from rest_framework import serializers
 from bucketlist.models import Bucketlist
 
+
 class BucketlistSerializer(serializers.ModelSerializer):
     """
     Serializer for the Bucketlist model

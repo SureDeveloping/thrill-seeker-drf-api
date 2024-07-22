@@ -6,6 +6,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 
 # Create your models here.
 
+
 class BucketlistList(generics.ListCreateAPIView):
     """
     Bucketlist related to the "user" and "park" model
@@ -23,8 +24,9 @@ class BucketlistList(generics.ListCreateAPIView):
 
     filterset_fields = [
         'user__profile',
-        'park', 
+        'park',
     ]
+
 
 class BucketlistDetail(generics.RetrieveDestroyAPIView):
     """

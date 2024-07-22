@@ -24,8 +24,9 @@ class RatingList(generics.ListCreateAPIView):
 
     filterset_fields = [
         'user__profile',
-        'park', 
+        'park',
     ]
+
 
 class RatingDetail(generics.RetrieveUpdateDestroyAPIView):
     """

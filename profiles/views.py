@@ -29,6 +29,7 @@ class ProfileList(generics.ListAPIView):
         'like_count',
     ]
 
+
 class ProfileDetail(generics.RetrieveUpdateAPIView):
     """
     Retrieve or update a profile if you're the owner.

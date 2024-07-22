@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from .models import ContactForm
 from .serializers import ContactFormSerializer
 
+
 class ContactFormCreate(generics.CreateAPIView):
     """
     Create a new contact form and provide an edit token.
@@ -21,9 +22,10 @@ class ContactFormCreate(generics.CreateAPIView):
         return Response(
             response_data, status=status.HTTP_201_CREATED, headers=headers)
 
+
 class ContactFormUpdate(generics.RetrieveUpdateDestroyAPIView):
     """
-    Retrieve, update and delete an existing 
+    Retrieve, update and delete an existing
     contact form using the provided edit token.
     """
     queryset = ContactForm.objects.all()
@@ -53,7 +55,7 @@ class ContactFormUpdate(generics.RetrieveUpdateDestroyAPIView):
 
         # Refresh the token after successful update
         instance.refresh_token()
-        
+
         response_data = serializer.data
         response_data['edit_token'] = str(instance.edit_token)
         return Response(response_data)
@@ -62,6 +64,7 @@ class ContactFormUpdate(generics.RetrieveUpdateDestroyAPIView):
         instance = self.get_object()
         self.perform_destroy(instance)
         return Response(status=status.HTTP_204_NO_CONTENT)
+
 
 class ContactFormList(generics.ListAPIView):
     """
@@ -73,6 +76,8 @@ class ContactFormList(generics.ListAPIView):
 
     def list(self, request, *args, **kwargs):
         if not request.user.is_staff:
-            return Response({"detail": "You do not have permission to this data."},
-                            status=status.HTTP_403_FORBIDDEN)
+            return Response(
+                {"detail": "You do not have permission to this data."},
+                status=status.HTTP_403_FORBIDDEN
+            )
         return super().list(request, *args, **kwargs)

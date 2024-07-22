@@ -6,6 +6,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 
 # Create your views here.
 
+
 class LikeList(generics.ListCreateAPIView):
     """
     List likes or create a like if logged in.
@@ -23,7 +24,7 @@ class LikeList(generics.ListCreateAPIView):
 
     filterset_fields = [
         'user__profile',
-        'rating', 
+        'rating',
     ]
 
 

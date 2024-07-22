@@ -13,12 +13,13 @@ class ContactFormSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ContactForm
-        fields = ["id", "first_name", "last_name",
+        fields = [
+            "id", "first_name", "last_name",
             "email", "subject", "message",
             "created_at",
         ]
-
-        read_only_fields = ["id", "created_at",
+        read_only_fields = [
+            "id", "created_at",
         ]
 
         def validate_subject(self, value):
@@ -28,7 +29,7 @@ class ContactFormSerializer(serializers.ModelSerializer):
 
         extra_kwargs = {
             "first_name": {
-                "error_messages": {"blank":  "This field is required"}
+                "error_messages": {"blank": "This field is required"}
             },
             "last_name": {
                 "error_messages": {"blank": "This field is required"}
@@ -58,12 +59,11 @@ class ContactFormSerializer(serializers.ModelSerializer):
             f"Email: {contact.email}\n"
             f"Subject: {contact.subject}\n"
             f"Message:\n{contact.message}\n"
-            f"Created at: {contact.created_at}\n"         
+            f"Created at: {contact.created_at}\n"
         )
-        
+
         try:
             send_mail(subject, message, contact.email, [ADMIN_EMAIL])
         except Exception as e:
             print(f"Failed to send Contact Form, Please try again {e}")
-
         return contact

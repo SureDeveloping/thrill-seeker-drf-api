@@ -3,6 +3,7 @@ from .models import Profile
 from bucketlist.models import Bucketlist
 from ratings.models import Rating
 
+
 class ProfileSerializer(serializers.ModelSerializer):
     user = serializers.ReadOnlyField(source='user.username')
     is_owner = serializers.SerializerMethodField()
@@ -56,8 +57,8 @@ class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
         fields = [
-            'id', 'user', 'favorite_park', 'favorite_ride', 
-            'userbio', 'created_at', 'updated_at', 
+            'id', 'user', 'favorite_park', 'favorite_ride',
+            'userbio', 'created_at', 'updated_at',
             'profile_picture', 'is_owner', 'ratings_count',
             'bucketlist_count', 'bucketlist', 'ratings'
         ]

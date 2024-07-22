@@ -58,5 +58,3 @@ def send_contact_email(sender, instance, created, **kwargs):
         to_email = [settings.ADMIN_EMAIL]
 
         send_mail(subject, message, from_email, to_email)
-
-        

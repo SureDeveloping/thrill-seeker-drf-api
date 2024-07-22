@@ -6,6 +6,7 @@ from backend.permissions import IsOwnerOrReadOnly
 
 # Create your views here.
 
+
 class ParkList(generics.ListCreateAPIView):
     serializer_class = ParkSerializer
     queryset = Park.objects.annotate(
@@ -16,7 +17,7 @@ class ParkList(generics.ListCreateAPIView):
 
     filter_backends = [
         filters.OrderingFilter,
-        filters.SearchFilter, 
+        filters.SearchFilter,
     ]
 
     search_fields = [
@@ -40,6 +41,7 @@ class ParkList(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+
 
 class ParkDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ParkSerializer
