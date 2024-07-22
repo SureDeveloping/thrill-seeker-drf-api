@@ -9,6 +9,7 @@ All other relevant files can be found here:
 [API Repository](https://github.com/SureDeveloping/thrill-seeker-drf-api) <br>
 
 ## Content
+- [Backend Userstory](#backend-userstory)
 - [Database](#database)
   * [Bucketlist](#bucketlist-)
   * [Contact](#contact)
@@ -26,9 +27,9 @@ All other relevant files can be found here:
   * [Tools](#tools)
   * [Supporting Libraries and Packages](#supporting-libraries-and-packages)
 - [Deployment](#deployment)
-  * [Django Documentation:](#django-documentation)
+- [Credits](#credits)   ???? Die gi
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+## Backend Userstorys
 
 ## Database
 This ERD Entity-Relationship Diagramm was created for the Thrill Seeker project. All the models serve the project gole and contribute to its success with their functions.
@@ -104,7 +105,7 @@ It is assumed that user accounts exist for the respective services used and that
 4. In the Heroku dashboard, the created app is connected to the GitHub repository under the "Deployment method" section on the deployment page. The app is then deployed via "Manual deployment" by clicking the Deploy Branch button. After successful deployment, Heroku provides a URL for accessing the live application. 
 
 
-### Credits: ????
+## Credits ????
 email senden für user profile???
 edit token
 [django-versatileimagefield - Custom filters](https://django-versatileimagefield.readthedocs.io/en/2.1/writing_custom_sizers_and_filters.html)
