@@ -40,7 +40,7 @@ Das Userprofil muss ich noch mal Prüfen!!!
 This model is a list of parks that a user would like to visit. In other words, a watch list for a later date.  It is linked to the user model and the park model. 
 
 ### Contact Form: 
-Visitors to the website can use the contact form model to send a message that is saved. The model contains first_name, last_name, email, subject, message, last_updated and an edit_token. This allows the data to be updated once, after the user has checked it.
+Visitors to the website can use the contact form model to send a message that is saved. The model contains first_name, last_name, email, subject, message, last_updated and an edit_token. This allows the data to be updated once, after the user has checked it. The edit token is used for verification and secure the model against misuse.
 
 ### Rating:
 This model represents ratings that can be submitted by users who are logged in. 
