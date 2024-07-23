@@ -78,7 +78,7 @@ The python code of the backend was checked by a Pyton linter. The code Institute
 
 ### Manual testing
 These steps were carried out to test the API manually:
-1. Testing all urls for proper functioning.
+1. Testing all urls Endpoints for proper functioning.
 2. Checking the correct functioning of the apps. If what is expected happens during use and all functions work without problems. (CRUD functionality)
 3. Testing the search function
 

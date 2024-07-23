@@ -47,7 +47,7 @@ This model represents ratings that can be submitted by users who are logged in.
 It is linked to the user model and the parking model via a foreign key. It also contains a rating as an integer field, a reason for this rating, created at, updated at and last visited field. 
 
 ### Like: 
-This model contains the Likes. These can be created by logged-in users for ratings. It is connected to the user models via and to the rating via a foreign key. It also contains a created at field.
+This model contains the Likes. These can be created by logged-in users for ratings. It is connected to the user models via and to the rating via a foreign key. It also contains a "created at" field. The likes app is not yet available in the front. For the future, this has been integrated into the backend so that this function can be added quickly.
 
 ### Post: 
 The park model presents the articles that can be created by super users (is staff) and it is linked to the user as a foreign key. It contains the name of the park, a description, a picture, the number of rides, the number of roller coasters, the thrill factor, the overall rating and the website of the park. 

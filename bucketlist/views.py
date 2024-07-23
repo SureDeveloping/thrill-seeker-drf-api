@@ -30,7 +30,7 @@ class BucketlistList(generics.ListCreateAPIView):
 
 class BucketlistDetail(generics.RetrieveDestroyAPIView):
     """
-    See a Bucketlist or delete Bucketlist item by id if you own it.
+    See a Bucketlist item or delete Bucketlist item by id if you own it.
     """
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = BucketlistSerializer
