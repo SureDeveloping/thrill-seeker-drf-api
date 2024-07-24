@@ -14,17 +14,6 @@ class ParkList(generics.ListCreateAPIView):
         bucketlist_count=Count('bucketlist', distinct=True)
     ).order_by('-created_at')
 
-    filter_backends = [
-        filters.OrderingFilter,
-        filters.SearchFilter,
-    ]
-
-    search_fields = [
-        'user__username',
-        'name',
-        'description',
-    ]
-
     ordering_fields = [
         'bucketlist_count',
         'ratings_count',
