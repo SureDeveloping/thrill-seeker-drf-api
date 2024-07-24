@@ -4,9 +4,9 @@
 The testing.md file provides an overview of all tests that have been carried out specifically with the Thrill Seeker API.
 
 ## Content
-1. [Code Validation](#code-validation)
-2. [Manual testing](#manual-testing)
-3. [Resume](#resume)
+- [Code Validation](#code-validation)
+- [Manual testing](#manual-testing)
+- [Resume](#resume)
 
 
 ### Code Validation 

@@ -3,7 +3,7 @@
 
 This readme provides information about the API endpoints and functionalities for Thrill Seeker website. 
 All other relevant files can be found here:
-[Live website]() Fehlt noch! <br>
+[Live website](https://thrill-seekers-af06984a9bdb.herokuapp.com/) <br>
 [Repository](https://github.com/SureDeveloping/thrill-seekers) <br>
 [APi](https://thrill-seekers-api-5fd87044d4ac.herokuapp.com/) <br>
 [API Repository](https://github.com/SureDeveloping/thrill-seeker-drf-api) <br>
@@ -33,8 +33,7 @@ All other relevant files can be found here:
 
 ## Database
 This ERD Entity-Relationship Diagramm was created for the Thrill Seeker project. All the models serve the project gole and contribute to its success with their functions.
-![Entity Relationship Diagramm](/readmefiles/erd.png)
-Das Userprofil muss ich noch mal Prüfen!!!
+![Entity Relationship Diagramm](./documentationfiles/ERD.png)
 
 ### Bucketlist: 
 This model is a list of parks that a user would like to visit. In other words, a watch list for a later date.  It is linked to the user model and the park model. 
@@ -67,7 +66,7 @@ Here is a summary of the identified bugs along with brief descriptions of their 
 
 
 ## Testing
-The tests for the Thrill Seeker Api are listed in a separate file. This file can be found here. [TESTING.md](https://github.com/SureDeveloping/thrill-seeker-drf-api/blob/main/TESTING.md).
+The tests for the Thrill Seeker Api are listed in a separate file. This file can be found here. [TESTING.md](./TESTING.md)
 
 ### Languages
 - Python
