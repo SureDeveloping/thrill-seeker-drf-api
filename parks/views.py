@@ -1,4 +1,3 @@
-from django.db.models import Count, Avg
 from rest_framework import generics, permissions, filters
 from .models import Park
 from .serializers import ParkSerializer
@@ -11,7 +10,6 @@ class ParkList(generics.ListCreateAPIView):
     serializer_class = ParkSerializer
     queryset = Park.objects.annotate(
         ratings_count=Count('rating', distinct=True),
-        average_rating=Avg('rating__rating'),
         bucketlist_count=Count('bucketlist', distinct=True)
     ).order_by('-created_at')
 
@@ -29,7 +27,6 @@ class ParkList(generics.ListCreateAPIView):
     ordering_fields = [
         'bucketlist_count',
         'ratings_count',
-        'average_rating',
         'thrill_factor',
         'overall_rating',
     ]
@@ -47,7 +44,6 @@ class ParkDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ParkSerializer
     queryset = Park.objects.annotate(
         ratings_count=Count('rating', distinct=True),
-        average_rating=Avg('rating__rating'),
         bucketlist_count=Count('bucketlist', distinct=True)
     ).order_by('-created_at')
 

@@ -11,7 +11,6 @@ class ParkSerializer(serializers.ModelSerializer):
     bucketlist_id = serializers.SerializerMethodField()
     rating_id = serializers.SerializerMethodField()
     ratings_count = serializers.ReadOnlyField()
-    average_rating = serializers.ReadOnlyField()
     bucketlist_count = serializers.ReadOnlyField()
     profile_picture = serializers.ReadOnlyField(
         source='user.profile.profile_picture.url')
@@ -64,5 +63,5 @@ class ParkSerializer(serializers.ModelSerializer):
             'thrill_factor', 'overall_rating',
             'created_at', 'updated_at', 'is_owner', 'profile_id',
             'bucketlist_id', 'rating_id', 'ratings_count',
-            'bucketlist_count', 'average_rating', 'profile_picture',
+            'bucketlist_count', 'profile_picture',
         ]
