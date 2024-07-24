@@ -1,7 +1,8 @@
 ![Logo](/documentationfiles/logo2.webp)
 # Thrill Seeker API Readme
 
-This readme provides information about the API endpoints and functionalities for Thrill Seeker website. 
+For the Thrill Seeker website. The website provides you with articles about theme parks. Here the parks are rated and tips and recommendations are given for which target group the park is suitable. To realize this project a backend in the Django rest framework was created in this repository.
+
 All other relevant files can be found here:
 [Live website](https://thrill-seekers-af06984a9bdb.herokuapp.com/) <br>
 [Repository](https://github.com/SureDeveloping/thrill-seekers) <br>
@@ -17,19 +18,37 @@ All other relevant files can be found here:
   * [Parks](#parks)
   * [Profiles](#profiles)
   * [Ratings](#ratings)
+- [API Endpoints](#api-endpoints)
 - [Bugs](#bugs)
-  * [Known bugs](#known-bugs)
-  * [Fixed bugs](#fixed-bugs)
+  * [Known bugs](#known-bugs) ??????
+  * [Fixed bugs](#fixed-bugs) ??????
 - [Testing](#testing)
   * [Languages](#languages)
   * [Frameworks](#frameworks)
   * [Database](#database-1)
   * [Tools](#tools)
-  * [Supporting Libraries and Packages](#supporting-libraries-and-packages)
+  * [Supporting Libraries and Packages](#supporting-libraries-and-packages)   ??????
 - [Deployment](#deployment)
-- [Credits](#credits)   ???? Die gi
+- [Credits](#credits)   ???? 
 
 ## Backend Userstorys
+To monitor the work, the following user story was created to create the backend. 
+
+| Epic        | User Story                                                                                                                                        | Acceptance Cretary                                                                                                                                                                               | Tasks                                                                                                               | Moscow      |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------- | ----------- |
+| Backend_API | As an admin I need a stable API backend for my website to process the data entered on my website so i can set concet the front to it              | AC1: The repository  with all necessary libraries was set up                                                                                                                                     | T1: Create a repository and install all necessary libraries<br>T2: Connected database to the backend                | Must have   |
+| Backend_API | As an admin I need a model serializer view and urls for the Parks app  so i can set concet the front to it                                        | AC1: The backend for the park app works on the local server and on the deployed heroku version<br>AC2: The CRUD function is working                                                              | T1: Create the model<br>T2: Create the view<br>T3: Create the serializer<br>T4: Create the URLs<br>T5: Test the app | Must have   |
+| Backend_API | As an admin I need a model serializer view and urls for the Bucketlist app  so i can set concet the front to it                                   | AC1: The backend for the bucketlist app works on the local server  and on the deployed heroku version                                                                                            | T1: Create the model<br>T2: Create the view<br>T3: Create the serializer<br>T4: Create the URLs<br>T5: Test the app | Must have   |
+| Backend_API | As an admin I need a model serializer view and urls for the rating app  so i can set concet the front to it                                       | AC1: The backend for the rating app works on the local server  and on the deployed heroku version                                                                                                | T1: Create the model<br>T2: Create the view<br>T3: Create the serializer<br>T4: Create the URLs<br>T5: Test the app | Must have   |
+| Backend_API | As an admin I need a model serializer view and urls for the like app  so i can set concet the front to it                                         | AC1: The backend for the like app works on the local server and on the deployed heroku version                                                                                                   | T1: Create the model<br>T2: Create the view<br>T3: Create the serializer<br>T4: Create the URLs<br>T5: Test the app | Could have  |
+| Backend_API | As an admin I need a model serializer view and urls for the Contact form app  so i can set concet the front to it                                 | AC1: The backend for the contact app works on the local server and on the deployed heroku version                                                                                                | T1: Create the model<br>T2: Create the view<br>T3: Create the serializer<br>T4: Create the URLs<br>T5: Test the app | Could have  |
+| Backend_API | As an admin I need a model serializer view and urls for the Userprofile app  so i can set concet the front to it                                  | AC1: The backend for the userprofile app works on the local server and on the deployed heroku version                                                                                            | T1: Create the model<br>T2: Create the view<br>T3: Create the serializer<br>T4: Create the URLs<br>T5: Test the app | Could have  |
+| Backend_API | As admin I want to make sure that only the owner of a user profile can change it and has to authenticate himself to prevent unauthorized changes. | AC1: The backend for the user authentication is working.<br>AC2: Only owners of a profile can change this<br>AC3: Every not loggin in user can read all profiles                                 | T1: Add auth, permission function to profiles app<br>T2: Test the auth, permisson function                          | Must have   |
+| Backend_API | As a user, I would like to see all my set likes so that I can read the corresponding ratings again                                                | AC1: In the backend, a field indicates whether a ratings is liked by a user when the user is logged in.<br>AC2: There is a fild on my Profile which shows the number of my likes                 | T1: Add a filter for likes to the sericalizer<br>T2: Add like count                                                 | Should have |
+| Backend_API | As a user, I would like to see all my set bucketlist items so that I can plan my nest park visit                                                  | AC1: In the backend, a field indicates whether a park is on a user's bucket list when the user is logged in.<br>AC2: There is a fild on my Profile which shows the number of my buxketlist items | T1: Add a filter for bucketlist items to the sericalizer<br>T2: Add bucketlist count                                | Should have |
+| Backend_API | As a user, I would like to see all my set ratings so that I can update them with new experiences                                                  | AC1: In the backend, a field indicates whether a a park is rated by auser's when the user is logged in.<br>AC2: There is a fild on my Profile which shows the number of my ratings               | T1: Add a filter for a rating to the sericalizer<br>T2: Add ratings count                                           | Should have |
+| Backend_API | As a user, I would like search the parks by the name to find a park faster if it exsists.                                                         | <br>AC1: I can search parks by name, author(username), country                                                                                                                                   | T1: Add search function                                                                                             | Should have |
+| Backend_API | As a user, I would see ratings and bucketlist count on the park page to get a better opinion on that park                                         | AC1: The bucketlist count is on the park backend page<br>AC2: The rating count and average is on the parks backend page                                                                          | T1: Add bucketlist count<br>T2: Add rating count and average                                                        | Should have |
 
 ## Database
 This ERD Entity-Relationship Diagramm was created for the Thrill Seeker project. All the models serve the project gole and contribute to its success with their functions.
@@ -53,6 +72,58 @@ The Profiles model extends the user model with additional information such as fa
 ### Ratings:
 This model represents ratings that can be submitted by users who are logged in. 
 It is linked to the user model and the parking model via a foreign key. It also contains a rating as an integer field, a reason for this rating, created at, updated at and last visited field. 
+
+## API Endpoins
+The following table provides an overview of all API endpoints. It also includes the HTTP Metod, CRUD Operation and View Type with a short description.
+
+| Root Route     | Endpoint                     | HTTP Method | CRUD Operation | View Type           | Description                                                                     |
+| -------------- | ---------------------------- | ----------- | -------------- | ------------------- | ------------------------------------------------------------------------------- |
+|                | /                            | GET         | Read           | Function-based view | Root route                                                                      |
+| Authentication |                              |             |                |                     |                                                                                 |
+|                | /admin/                      | GET         | Read           | Django Admin        | Django admin interface                                                          |
+|                | /dj-rest-auth/logout/        | POST        | Delete         | Function-based view | Custom logout route                                                             |
+|                | /dj-rest-auth/login/         | POST        | Create         | DRF built-in view   | User login                                                                      |
+|                | /dj-rest-auth/user/          | GET         | Read           | DRF built-in view   | Get current user details                                                        |
+|                | /dj-rest-auth/user/          | PUT         | Update         | DRF built-in view   | Update current user details                                                     |
+|                | /dj-rest-auth/registration/  | POST        | Create         | DRF built-in view   | User registration                                                               |
+|                |                              |             |                |                     |                                                                                 |
+| Bucketlist     |                              |             |                |                     |                                                                                 |
+|                | /bucketlist/                 | GET         | Read           | ListAPIView         | List all bucketlist items                                                       |
+|                | /bucketlist/                 | POST        | Create         | CreateAPIView       | Create a new bucketlist (authenticated users only)                              |
+|                | /bucketlist/{id}/            | GET         | Read           | RetrieveAPIView     | Retrieve a specific bucketlist                                                  |
+|                | /bucketlist/{id}/            | DELETE      | Delete         | DestroyAPIView      | Delete a specific bucketlist item (owner only)                                  |
+|                |                              |             |                |                     |                                                                                 |
+| Contact Form   |                              |             |                |                     |                                                                                 |
+|                | /contact/                    | GET         | Read           | ListAPIView         | List all contact form messages                                                  |
+|                | /contact/create/             | POST        | Create         | CreateAPIView       | Create a new contact message                                                    |
+|                | contact/update/{edit_token}/ | GET         | Read           | RetrieveAPIView     | Retrieve the just created contact message authenticated via a unique edit_token |
+|                | contact/update/{edit_token}/ | PUT         | Update         | UpdateAPIView       | Update the just created contact message. authenticated via a unique edit_token  |
+|                | contact/update/{edit_token}/ | DELETE      | Delete         | DestroyAPIView      | Delete the just created contact message. authenticated via a unique edit_token  |
+|                |                              |             |                |                     |                                                                                 |
+| Likes          |                              |             |                |                     |                                                                                 |
+|                | /likes/                      | GET         | Read           | ListAPIView         | List all likes                                                                  |
+|                | /likes/                      | POST        | Create         | CreateAPIView       | Create a new like (authenticated users only)                                    |
+|                | /likes/{id}/                 | GET         | Read           | RetrieveAPIView     | Retrieve a specific like                                                        |
+|                | /likes/{id}/                 | DELETE      | Delete         | DestroyAPIView      | Delete a specific like (owner only)                                             |
+|                |                              |             |                |                     |                                                                                 |
+| Parks          |                              |             |                |                     |                                                                                 |
+|                | /parks/                      | GET         | Read           | ListAPIView         | Retrieve a list of parks                                                        |
+|                | /parks/                      | POST        | Create         | CreateAPIView       | Create a new park                                                               |
+|                | /parks/{id}/                 | GET         | Read           | RetrieveAPIView     | Retrieve a specific park by ID                                                  |
+|                | /parks/{id}/                 | PUT         | Update         | UpdateAPIView       | Update a specific park by ID                                                    |
+|                | /parks/{id}/                 | DELETE      | Delete         | DestroyAPIView      | Delete a specific park by ID                                                    |
+|                |                              |             |                |                     |                                                                                 |
+| Profiles       |                              |             |                |                     |                                                                                 |
+|                | /profiles/                   | GET         | Read           | ListAPIView         | List all profiles (logged in users)                                             |
+|                | /profiles/{id}/              | GET         | Read           | RetrieveAPIView     | Retrieve a specific profile (logged in users)                                   |
+|                | /profiles/{id}/              | PUT         | Update         | UpdateAPIView       | Update a specific profile (owner only)                                          |
+|                |                              |             |                |                     |                                                                                 |
+| Ratings        |                              |             |                |                     |                                                                                 |
+|                | /ratings/                    | GET         | Read           | ListAPIView         | List all ratings                                                                |
+|                | /ratings/                    | POST        | Create         | CreateAPIView       | Create a new rating (authenticated users only)                                  |
+|                | ratings/{id}/                | GET         | Read           | RetrieveAPIView     | Retrieve a specific rating                                                      |
+|                | /ratings/{id}/               | PUT         | Update         | UpdateAPIView       | Update a specific rating (owner only)                                           |
+|                | /ratings/{id}/               | DELETE      | Delete         | DestroyAPIView      | Delete a specific rating (owner only)                                           |
 
 
 ## Bugs
