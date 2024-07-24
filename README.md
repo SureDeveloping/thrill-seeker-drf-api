@@ -1,7 +1,7 @@
 ![Logo](/documentationfiles/logo2.webp)
 # Thrill Seeker API Readme
 
-For the Thrill Seeker website. The website provides you with articles about theme parks. Here the parks are rated and tips and recommendations are given for which target group the park is suitable. To realize this project a backend in the Django rest framework was created in this repository.
+This is the Django Rest API for the Thrill Seeker website. The website provides you with articles about theme parks. Here the parks are rated and tips and recommendations are given for which target group the park is suitable. 
 
 All other relevant files can be found here:
 [Live website](https://thrill-seekers-af06984a9bdb.herokuapp.com/) <br>
