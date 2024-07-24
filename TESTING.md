@@ -6,7 +6,7 @@ The testing.md file provides an overview of all tests that have been carried out
 ## Content
 1. [Code Validation](#code-validation)
 2. [Manual testing](#manual-testing)
-3. [Summary](#summary)
+3. [Resume](#resume)
 
 
 ### Code Validation 
@@ -77,7 +77,7 @@ The python code of the backend was checked by a Pyton linter. The code Institute
 
 
 ### Manual testing
-When testing manually, the first step is to test all urls endpoint tests and check the function of all apps. The aim is to ensure that the app does what was expected and that it works properly (CRUD test). Finally, the search function is tested.
+Manual testing ensures that all apps and their endpoints work as planned and desired. All functions of the apps must work and the urls must be accessible. The search function must also work. This later ensures that users can use everything without any problems but only have access to data and functions where they are authorized.
 
 #### Root Route
 | Endpoint | Method | CRUD Operation | Description | Test Result Screenshot                                                                                                    | Expected Result                                                                        | Actual Result                                                                          | Result          |
@@ -180,4 +180,7 @@ Searching for park - name, park - description, park - user has been tested and i
 | name           | Fun         | <details><summary>search3</summary><img src="./documentationfiles/testing/search/search3.png"></details> | Pass, No errors |
 |                | Fun         | <details><summary>search4</summary><img src="./documentationfiles/testing/search/search4.png"></details> |                 |
 | description    | coaster     | <details><summary>search5</summary><img src="./documentationfiles/testing/search/search5.png"></details> | Pass, No errors |
-|                |             | <details><summary>search6</summary><img src="./documentationfiles/testing/search/search6.png"></details> |                 |
+|                |             | <details><summary>search6</summary><img src="./documentationfiles/testing/search/search6.png"></details> |      
+
+### Resume
+All tests were passed. Accordingly, the code is ready for use and publication.
