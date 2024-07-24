@@ -3,7 +3,7 @@
 
 This is the Django Rest API for the Thrill Seeker website. The website provides you with articles about theme parks. Here the parks are rated and tips and recommendations are given for which target group the park is suitable. 
 
-All other relevant files can be found here:
+All other relevant files can be found here: <br>
 [Live website](https://thrill-seekers-af06984a9bdb.herokuapp.com/) <br>
 [Repository](https://github.com/SureDeveloping/thrill-seekers) <br>
 [APi](https://thrill-seekers-api-5fd87044d4ac.herokuapp.com/) <br>
