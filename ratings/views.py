@@ -17,16 +17,7 @@ class RatingList(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
-
-    filter_backends = [
-            DjangoFilterBackend,
-    ]
-
-    filterset_fields = [
-        'user__profile',
-        'park',
-    ]
-
+    
 
 class RatingDetail(generics.RetrieveUpdateDestroyAPIView):
     """
