@@ -11,8 +11,8 @@ All other relevant files can be found here:
 ## Content
 - [Backend Userstory](#backend-userstory)
 - [Database](#database)
-  * [Bucketlist](#bucketlist-)
-  * [Contact](#contact)
+  * [Bucketlist](#bucketlist)
+  * [Contact Form](#contact-form)
   * [Likes](#likes)
   * [Parks](#parks)
   * [Profiles](#profiles)
@@ -41,18 +41,18 @@ This model is a list of parks that a user would like to visit. In other words, a
 ### Contact Form: 
 Visitors to the website can use the contact form model to send a message that is saved. The model contains first_name, last_name, email, subject, message, last_updated and an edit_token. This allows the data to be updated once, after the user has checked it. The edit token is used for verification and secure the model against misuse.
 
-### Rating:
-This model represents ratings that can be submitted by users who are logged in. 
-It is linked to the user model and the parking model via a foreign key. It also contains a rating as an integer field, a reason for this rating, created at, updated at and last visited field. 
-
-### Like: 
+### Likes: 
 This model contains the Likes. These can be created by logged-in users for ratings. It is connected to the user models via and to the rating via a foreign key. It also contains a "created at" field. The likes app is not yet available in the front. For the future, this has been integrated into the backend so that this function can be added quickly.
 
-### Post: 
+### Parks: 
 The park model presents the articles that can be created by super users (is staff) and it is linked to the user as a foreign key. It contains the name of the park, a description, a picture, the number of rides, the number of roller coasters, the thrill factor, the overall rating and the website of the park. 
 
-### Traveler: 
+### Profiles: 
 The Profiles model extends the user model with additional information such as favorite-park, favorite_ride userbio, profile_picture and timestamps for created-at and updated_at. The user profile is created automatically when a user is created.
+
+### Ratings:
+This model represents ratings that can be submitted by users who are logged in. 
+It is linked to the user model and the parking model via a foreign key. It also contains a rating as an integer field, a reason for this rating, created at, updated at and last visited field. 
 
 
 ## Bugs
