@@ -19,15 +19,16 @@ All other relevant files can be found here: <br>
   * [Profiles](#profiles)
   * [Ratings](#ratings)
 - [API Endpoints](#api-endpoints)
-- [Bugs](#bugs)
-  * [Known bugs](#known-bugs) ??????
-  * [Fixed bugs](#fixed-bugs) ??????
-- [Testing](#testing)
+- [Technology Used](#technology-used)
   * [Languages](#languages)
   * [Frameworks](#frameworks)
   * [Database](#database-1)
   * [Tools](#tools)
   * [Libraries and Packages](#libraries-and-packages)
+- [Testing](#testing)
+- [Bugs](#bugs)
+  * [Known bugs](#known-bugs) ??????
+  * [Fixed bugs](#fixed-bugs) ??????
 - [Deployment](#deployment)
 - [Credits](#credits)   ???? 
 
@@ -126,19 +127,7 @@ The following table provides an overview of all API endpoints. It also includes 
 |                | /ratings/{id}/               | DELETE      | Delete         | DestroyAPIView      | Delete a specific rating (owner only)                                           |
 
 
-## Bugs
-?????????????
-
-### Known bugs
-???????????????????????????
-
-### Fixed bugs 
-Here is a summary of the identified bugs along with brief descriptions of their fixes. luding the bug report, commits, and the steps taken to resolve the issue.??????????????????????????????????????????
-
-
-## Testing
-The tests for the Thrill Seeker Api are listed in a separate file. This file can be found here. [TESTING.md](./TESTING.md)
-
+## Technologies Used
 ### Languages
 - Python
 - Markdown
@@ -202,6 +191,21 @@ It is assumed that user accounts exist for the respective services used and that
 3. Set the local environment variables, env.py file for the PostgreSQL URL, the Cloudinary URL and the secret Django key. These variables must also be added in the Heroku app under the Config Vars section. To communicate with the Heroku application. Avoid exposing your environment variables in your public repository. Use the Config Vars section in Heroku to securely set your environment variables.
 4. Perform all database migrations and have the current state of the models in the database schema. Commit and push all changes to the GitHub repository. The commands python manage.py makemigrations and python manage.py migrate were used for this. 
 4. In the Heroku dashboard, the created app is connected to the GitHub repository under the "Deployment method" section on the deployment page. The app is then deployed via "Manual deployment" by clicking the Deploy Branch button. After successful deployment, Heroku provides a URL for accessing the live application. 
+
+## Testing
+The tests for the Thrill Seeker Api are listed in a separate file. This file can be found here. [TESTING.md](./TESTING.md)
+
+## Bugs
+?????????????
+
+### Known bugs
+???????????????????????????
+
+### Fixed bugs 
+Here is a summary of the identified bugs along with brief descriptions of their fixes. luding the bug report, commits, and the steps taken to resolve the issue.??????????????????????????????????????????
+
+
+
 
 
 ## Credits ????
