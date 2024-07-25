@@ -27,7 +27,7 @@ All other relevant files can be found here: <br>
   * [Frameworks](#frameworks)
   * [Database](#database-1)
   * [Tools](#tools)
-  * [Supporting Libraries and Packages](#supporting-libraries-and-packages)   ??????
+  * [Libraries and Packages](#libraries-and-packages)
 - [Deployment](#deployment)
 - [Credits](#credits)   ???? 
 
@@ -161,8 +161,37 @@ The PostgreSQL database from Code Institute was used as the database.
 - Code Institute Postgres Database - PostgreSQL database for this project
 
 
-### Supporting Libraries and Packages
-??????? Oder zusammen mit tools???
+### Libraries and Packages
+- asgiref==3.3.4 - ASGI (Asynchronous Server Gateway Interface) specification, used by Django for asynchronous support
+- certifi==2024.6.2 - A collection of root certificates for SSL/TLS verification
+- cffi==1.16.0 - C Foreign Function Interface for Python.
+- charset-normalizer==3.3.2 - Library for character encoding detection
+- cloudinary==1.33.0 - Python SDK for Cloudinary, a cloud service for image and video management
+- cryptography==3.4.8 - Library for various cryptographic operations
+- defusedxml==0.7.1 - XML bomb protection for Python stdlib modules
+- dj-database-url==0.5.0 - Utility to configure Django database using URLs
+- dj-rest-auth==2.1.9 - Authentication views for Django REST Framework
+- Django==3.2.4 - The core Django web framework
+- django-allauth==0.44.0 - Integrated set of Django applications addressing authentication, registration, account management
+- django-cloudinary-storage==0.3.0 - Django package that provides Cloudinary storages for both media and static files
+- django-cors-headers==3.7.0 - Django application for handling the server headers required for Cross-Origin Resource Sharing (CORS)
+- django-filter==2.4.0 - Django application for allowing users to filter querysets dynamically
+- djangorestframework==3.12.4 - Powerful and flexible toolkit for building Web APIs in Django
+- djangorestframework-simplejwt==4.7.2 - JSON Web Token authentication plugin for Django REST Framework
+- gunicorn==20.1.0 - Python WSGI HTTP Server for UNIX, often used to deploy Django applications
+- idna==3.7 - Internationalized Domain Names in Applications (IDNA) support
+- oauthlib==3.1.1 - Generic, spec-compliant implementation of OAuth for Python
+- Pillow==8.2.0 - Python Imaging Library (Fork), for opening, manipulating, and saving many different image file formats
+- psycopg2==2.9.1 - PostgreSQL adapter for Python
+- pycparser==2.22 - C parser in Python, required by some Python packages that interface with C code
+- PyJWT==2.1.0 - JSON Web Token implementation in Pytho
+- python3-openid==3.2.0 - OpenID support for modern servers and consumers
+- pytz==2021.1 - World timezone definitions for Python
+- requests==2.32.3 - HTTP library for Python
+- requests-oauthlib==1.3.0 - OAuthlib authentication support for Requests
+- six==1.16.0 - Python 2 and 3 compatibility library
+- sqlparse==0.4.1 - Non-validating SQL parser for Python
+
 
 ## Deployment
 Deploying the Django backend :
