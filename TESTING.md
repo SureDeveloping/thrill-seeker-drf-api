@@ -1,7 +1,8 @@
 ![Logo](/documentationfiles/logo2.webp)
 # Thrill Seeker API Testing
 
-The testing.md file provides an overview of all tests that have been carried out specifically with the Thrill Seeker API.
+The testing.md file provides an overview of all tests that have been carried out specifically with the Thrill Seeker API. <br>
+Return back to the [README.md](README.md) file.
 
 ## Content
 - [Code Validation](#code-validation)
