@@ -10,11 +10,11 @@ Return back to the [README.md](README.md) file.
 - [Resume](#resume)
 
 
-### Code Validation 
+## Code Validation 
 The python code of the backend was checked by a Pyton linter. The code Institute python linter was used for this purpes.
 [CI Python Linter](https://pep8ci.herokuapp.com/) 
 
-#### Backend
+### Backend
 | Tested File    | Test Result                                                                                                             | Pass            |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------- | --------------- |
 | permissions.py | <details><summary>backend permissions</summary><img src="./documentationfiles/testing/backend/permissions.png"></details> | Pass, No errors |
@@ -23,7 +23,7 @@ The python code of the backend was checked by a Pyton linter. The code Institute
 | urls.py        | <details><summary>backend urls</summary><img src="./documentationfiles/testing/backend/urls.png"></details>        | Pass, No errors |
 | views.py       | <details><summary>backend views</summary><img src="./documentationfiles/testing/backend/views.png"></details>       | Pass, No errors |
 
-#### Bucketlist
+### Bucketlist
 | Tested File    | Test Result                                                                                                             | Pass            |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------- | --------------- |
 | models         | <details><summary>bucketlist models</summary><img src="./documentationfiles/testing/bucketlist/models.png"></details>   | Pass, No errors |
@@ -32,7 +32,7 @@ The python code of the backend was checked by a Pyton linter. The code Institute
 | views.py       | <details><summary>bucketlist views</summary><img src="./documentationfiles/testing/bucketlist/views.png"></details>    | Pass, No errors |
 
 
-#### Contact Form
+### Contact Form
 | Tested File    | Test Result Screenshot                                                                                                    | Result          |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------- |
 | models         | <details><summary>contact_form models</summary><img src="./documentationfiles/testing/contact_form/models.png"></details>   | Pass, No errors |
@@ -41,7 +41,7 @@ The python code of the backend was checked by a Pyton linter. The code Institute
 | views.py       | <details><summary>contact_form views</summary><img src="./documentationfiles/testing/contact_form/views.png"></details>    | Pass, No errors |
 
 
-#### Rating
+### Rating
 | Tested File    | Test Result Screenshot                                                                                              | Result          |
 | -------------- | ------------------------------------------------------------------------------------------------------------------- | --------------- |
 | models         | <details><summary>rating models</summary><img src="./documentationfiles/testing/rating/models.png"></details>   | Pass, No errors |
@@ -49,7 +49,7 @@ The python code of the backend was checked by a Pyton linter. The code Institute
 | urls.py        | <details><summary>rating url</summary><img src="./documentationfiles/testing/rating/urls.png"></details>     | Pass, No errors |
 | views.py       | <details><summary>rating view</summary><img src="./documentationfiles/testing/rating/views.png"></details>    | Pass, No errors |
 
-#### Like
+### Like
 | Tested File    | Test Result Screenshot                                                                                            | Result          |
 | -------------- | ----------------------------------------------------------------------------------------------------------------- | --------------- |
 | models         | <details><summary>like models</summary><img src="./documentationfiles/testing/like/models.png"></details>   | Pass, No errors |
@@ -58,7 +58,7 @@ The python code of the backend was checked by a Pyton linter. The code Institute
 | views.py       | <details><summary>like views</summary><img src="./documentationfiles/testing/like/views.png"></details>    | Pass, No errors |
 
 
-#### Park
+### Park
 | Tested File    | Test Result Screenshot                                                                                            | Result          |
 | -------------- | ----------------------------------------------------------------------------------------------------------------- | --------------- |
 | models         | <details><summary>park models</summary><img src="./documentationfiles/testing/park/models.png"></details>   | Pass, No errors |
@@ -67,7 +67,7 @@ The python code of the backend was checked by a Pyton linter. The code Institute
 | views.py       | <details><summary>park views</summary><img src="./documentationfiles/testing/park/views.png"></details>    | Pass, No errors |
 
 
-#### Profile
+### Profile
 | Tested File    | Test Result Screenshot                                                                                               | Result          |
 | -------------- | -------------------------------------------------------------------------------------------------------------------- | --------------- |
 | models         | <details><summary>profile models</summary><img src="./documentationfiles/testing/profile/models.png"></details>   | Pass, No errors |
@@ -77,16 +77,16 @@ The python code of the backend was checked by a Pyton linter. The code Institute
 
 
 
-### Manual testing
+## Manual testing
 Manual testing ensures that all apps and their endpoints work as planned and desired. All functions of the apps must work and the urls must be accessible. The search function must also work. This later ensures that users can use everything without any problems but only have access to data and functions where they are authorized.
 
-#### Root Route
+### Root Route
 | Endpoint | Method | CRUD Operation | Description | Test Result Screenshot                                                                                                    | Expected Result                                                                        | Actual Result                                                                          | Result          |
 | -------- | ------ | -------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | --------------- |
 | /        | GET    | Read           | Root route  | <details><summary>root route</summary><img src="./documentationfiles/testing/endpoint/root_rout/root-rout.png"></details> | Leads to root root with "message": "This is the API from the Thrill Seekers website.!" | Leads to root root with "message": "This is the API from the Thrill Seekers website.!" | Pass, No errors |
 
 
-#### Authentication
+### Authentication
 | Endpoint                    | Method | CRUD Operation | Description                 | Test Result Screenshot                                                                                                            | Expected Result                              | Actual Result                             | Result          |
 | --------------------------- | ------ | -------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- | ----------------------------------------- | --------------- |
 | /admin/                     | GET    | Read           | Django admin interface      | <details><summary>admin1</summary><img src="./documentationfiles/testing/endpoint/auth/admin.png"></details>                      | Admin interface loads successfully           | Admin interface loaded successfully       | Pass, No errors |
@@ -101,7 +101,7 @@ Manual testing ensures that all apps and their endpoints work as planned and des
 |                             |        |                |                             | <details><summary>register3</summary><img src="./documentationfiles/testing/endpoint/auth/register3.png"></details>               |                                              |                                           |                 |
 
 
-#### Bucketlist
+### Bucketlist
 | Endpoint          | Method | CRUD Operation | Description                                        | Test Result Screenshot                                                                                                                              | Expected Result                                                  | Actual Result                                         | Result          |
 | ----------------- | ------ | -------------- | -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ----------------------------------------------------- | --------------- |
 | /bucketlist/      | GET    | Read           | List all bucketlist items                          | <details><summary>bucketlist-read-list</summary><img src="./documentationfiles/testing/endpoint/bucketlist/bucketlist-read-list.png"></details>     | Returns a list of all bucketlist items                           | Returned a list of all bucketlist successfully        | Pass, No errors |
@@ -114,7 +114,7 @@ Manual testing ensures that all apps and their endpoints work as planned and des
 
 
 
-#### Contact Form
+### Contact Form
 | Endpoint                     | Method | CRUD Operation | Description                                                                     | Test Result Screenshot                                                                                                               | Expected Result                             | Actual Result                                         | Result          |
 | ---------------------------- | ------ | -------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- | ----------------------------------------------------- | --------------- |
 | /contact/                    | GET    | Read           | List all contact form messages                                                  | <details><summary>contact-list1</summary><img src="./documentationfiles/testing/endpoint/contact/contact-list1.png"></details>       | Superuser (is_staff) sees all messages      | Messages list is displayed                            | Pass, No errors |
@@ -128,7 +128,7 @@ Manual testing ensures that all apps and their endpoints work as planned and des
 |                              |        |                |                                                                                 | <details><summary>contact-delete2</summary><img src="./documentationfiles/testing/endpoint/contact/contact-delete2.png"></details>   |                                             |                                                       |                 |
 
 
-#### Likes
+### Likes
 | Endpoint     | Method | CRUD Operation | Description                                  | Test Result Screenshot                                                                                                       | Expected Result                                       | Actual Result                                        | Result          |
 | ------------ | ------ | -------------- | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- | ---------------------------------------------------- | --------------- |
 | /likes/      | GET    | Read           | List all likes                               | <details><summary>like-read</summary><img src="./documentationfiles/testing/endpoint/likes/like-read.png"></details>         | Returns a list of all likes                           | Returned a list of all likes successfully            | Pass, No errors |
@@ -138,7 +138,7 @@ Manual testing ensures that all apps and their endpoints work as planned and des
 | /likes/{id}/ | DELETE | Delete         | Delete a specific like (owner only)          | <details><summary>like-delete1</summary><img src="./documentationfiles/testing/endpoint/likes/like-delete1.png"></details>   | Deletes the specified like by the authenticated owner | Like deleted successfully by the authenticated owner | Pass, No errors |
 |              |        |                |                                              | <details><summary>like-delete2</summary><img src="./documentationfiles/testing/endpoint/likes/like-delete2.png"></details>   |                                                       |                                                      |                 |
 
-#### Parks
+### Parks
 | Endpoint     | Method | CRUD Operation | Description                    | Test Result Screenshot                                                                                                         | Expected Result                | Actual Result                  | Result          |
 | ------------ | ------ | -------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------ | ------------------------------ | --------------- |
 | /parks/      | GET    | Read           | Retrieve a list of parks       | <details><summary>park-list-read</summary><img src="./documentationfiles/testing/endpoint/parks/park-list-read.png"></details> | List of parks returned         | List of parks returned         | Pass, No errors |
@@ -150,7 +150,7 @@ Manual testing ensures that all apps and their endpoints work as planned and des
 | /parks/{id}/ | DELETE | Delete         | Delete a specific park by ID   | <details><summary>park-delete1</summary><img src="./documentationfiles/testing/endpoint/parks/park-delete1.png"></details>     | Park deleted                   | Park deleted                   | Pass, No errors |
 |              |        |                |                                | <details><summary>park-delete2</summary><img src="./documentationfiles/testing/endpoint/parks/park-delete2.png"></details>     |                                |                                |                 |
 
-#### Profiles
+### Profiles
 | Endpoint        | Method | CRUD Operation | Description                                   | Test Result Screenshot                                                                                                                    | Expected Result                                        | Actual Result                                                    | Result          |
 | --------------- | ------ | -------------- | --------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | ---------------------------------------------------------------- | --------------- |
 | /profiles/      | GET    | Read           | List all profiles (logged in users)           | <details><summary>profiles-list-read</summary><img src="./documentationfiles/testing/endpoint/profiles/profiles-list-read.png"></details> | Returns a list of all user profiles                    | Partially updates the profile details for the authenticated user | Pass, No errors |
@@ -159,7 +159,7 @@ Manual testing ensures that all apps and their endpoints work as planned and des
 |                 |        |                |                                               | <details><summary>profiles-update2</summary><img src="./documentationfiles/testing/endpoint/profiles/profiles-update2.png"></details>     |                                                        |                                                                  |                 |
 
 
-#### Ratings
+### Ratings
 | Endpoint       | Method | CRUD Operation | Description                                    | Test Result Screenshot                                                                                                                 | Expected Result                                         | Actual Result                                   | Result          |
 | -------------- | ------ | -------------- | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | ----------------------------------------------- | --------------- |
 | /ratings/      | GET    | Read           | List all ratings                               | <details><summary>ratings-list-read</summary><img src="./documentationfiles/testing/endpoint/ratings/ratings-list-read.png"></details> | Returns a list of all ratings                           | Returned a list of all ratings successfully     | Pass, No errors |
@@ -171,7 +171,7 @@ Manual testing ensures that all apps and their endpoints work as planned and des
 | /ratings/{id}/ | DELETE | Delete         | Delete a specific rating (owner only)          | <details><summary>rating-delete1</summary><img src="./documentationfiles/testing/endpoint/ratings/ratings-delete1.png"></details>      | Deletes the specified rating by the authenticated owner | Rating deleted successfully                     | Pass, No errors |
 |                |        |                |                                                | <details><summary>rating-delete2</summary><img src="./documentationfiles/testing/endpoint/ratings/ratings-delete2.png"></details>      |                                                         |                                                 |                 |
 
-#### Search functionality
+### Search functionality
 Searching for park - name, park - description, park - user has been tested and it is working as expected.
 
 | Search filter  | Search word | Test Result Screenshot                                                                                   | Result          |
@@ -183,5 +183,5 @@ Searching for park - name, park - description, park - user has been tested and i
 | description    | coaster     | <details><summary>search5</summary><img src="./documentationfiles/testing/search/search5.png"></details> | Pass, No errors |
 |                |             | <details><summary>search6</summary><img src="./documentationfiles/testing/search/search6.png"></details> |      
 
-### Resume
+## Resume
 All tests were passed. Accordingly, the code is ready for use and publication.
