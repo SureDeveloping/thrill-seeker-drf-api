@@ -23,7 +23,7 @@ All other relevant files can be found here: <br>
   * [Languages](#languages)
   * [Frameworks](#frameworks)
   * [Database](#database-1)
-  * [Tools](#tools)
+  * [Software and Tools](#software-and-tools)
   * [Libraries and Packages](#libraries-and-packages)
 - [Testing](#testing)
 - [Bugs](#bugs)
