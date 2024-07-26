@@ -161,7 +161,7 @@ The PostgreSQL database from Code Institute was used as the database.
 - dj-database-url==0.5.0 - Utility to configure Django database using URLs
 - dj-rest-auth==2.1.9 - Authentication views for Django REST Framework
 - Django==3.2.4 - The core Django web framework
-- django-allauth==0.44.0 - Integrated set of Django applications addressing authentication, registration, account management
+- django-allauth==0.54.0 - Integrated set of Django applications addressing authentication, registration, account management
 - django-cloudinary-storage==0.3.0 - Django package that provides Cloudinary storages for both media and static files
 - django-cors-headers==3.7.0 - Django application for handling the server headers required for Cross-Origin Resource Sharing (CORS)
 - django-filter==2.4.0 - Django application for allowing users to filter querysets dynamically
@@ -180,6 +180,7 @@ The PostgreSQL database from Code Institute was used as the database.
 - requests-oauthlib==1.3.0 - OAuthlib authentication support for Requests
 - six==1.16.0 - Python 2 and 3 compatibility library
 - sqlparse==0.4.1 - Non-validating SQL parser for Python
+- django-resized==1.0.2 - To resize uploaded images
 
 
 ## Deployment
