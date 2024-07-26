@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django_resized import ResizedImageField
 
 # Create your models here.
 
@@ -11,8 +12,13 @@ class Park(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True)
-    image = models.ImageField(
-        upload_to='images/', default='', blank=True
+    image = ResizedImageField(
+        size=[500, 500], 
+        quality=75,
+        upload_to='images/', 
+        force_format='WEBP',
+        default='', 
+        blank=True
     )
     website = models.URLField(max_length=200, blank=True)
     total_number_of_rides = models.IntegerField(blank=True, null=True)
