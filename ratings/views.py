@@ -14,6 +14,8 @@ class RatingList(generics.ListCreateAPIView):
     serializer_class = RatingSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Rating.objects.all()
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['park', 'user__profile']
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)

@@ -14,6 +14,8 @@ class BucketlistList(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = BucketlistSerializer
     queryset = Bucketlist.objects.all()
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['park', 'user__profile']
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
