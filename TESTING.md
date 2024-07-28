@@ -185,16 +185,26 @@ Searching for park - name, park - description, park - user has been tested and i
 
 ### Filter functionality
 
-| filter                | filter word | Test Result Screenshot                                                                                                        | Result          |
-| --------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| bucketlist - park     | Europa Park | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/filter-bucketlist1.png"></details> | Pass, No errors |
-|                       |             | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/filter-bucketlist2.png"></details> |                 |
-| bucketlist - profiles | Ben         | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/filter-bucketlist3.png"></details> | Pass, No errors |
-|                       |             | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/filter-bucketlist4.png"></details> |                 |
-| rating - park         | Europa Park | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/filter-ratings1.png"></details>    | Pass, No errors |
-|                       |             | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/filter-ratings2.png"></details>    |                 |
-| rating - profiles     | Homer       | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/filter-ratings3.png"></details>    | Pass, No errors |
-|                       |             | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/filter-ratings4.png"></details>    |                 |
+| filter                                  | filter word | Test Result Screenshot                                                                                                        | Result          |
+| --------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------- | --------------- |
+| bucketlist - park                       | Europa Park | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/filter-bucketlist1.png"></details> | Pass, No errors |
+|                                         |             | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/filter-bucketlist2.png"></details> |                 |
+| bucketlist - profiles                   | Ben         | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/filter-bucketlist3.png"></details> | Pass, No errors |
+|                                         |             | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/filter-bucketlist4.png"></details> |                 |
+| rating - park                           | Europa Park | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/filter-ratings1.png"></details>    | Pass, No errors |
+|                                         |             | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/filter-ratings2.png"></details>    |                 |
+| rating - profiles                       | Homer       | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/filter-ratings3.png"></details>    | Pass, No errors |
+|                                         |             | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/filter-ratings4.png"></details>    |                 |
+| Park bucketlist_count  ascendingratings |             | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/park-ordering1.png"></details>     | Pass, No errors |
+| Park bucketlist_count  descendingthrill |             | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/park-ordering2.png"></details>     | Pass, No errors |
+| Park ratings_count  ascendingratings    |             | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/park-ordering3.png"></details>     | Pass, No errors |
+| Park ratings_count descendingthrill     |             | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/park-ordering4.png"></details>     | Pass, No errors |
+| Park thrill_factor  ascendingratings    |             | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/park-ordering5.png"></details>     | Pass, No errors |
+| Park thrill_factor descendingthrill     |             | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/park-ordering6.png"></details>     | Pass, No errors |
+| Park overall_rating  ascendingratings   |             | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/park-ordering7.png"></details>     | Pass, No errors |
+| Park overall_rating descendingthrill    |             | <details><summary>bucketlist - park</summary><img src="./documentationfiles/testing/filter/park-ordering8.png"></details>     | Pass, No errors |
+
+
 
 ## Resume
 All tests were passed. Accordingly, the code is ready for use and publication.
