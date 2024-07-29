@@ -244,46 +244,79 @@ The project was coded with gipod and then deployed on heroku.
 * Create a virtual environment and install the python modules in the pip file.
 * Run python3 makemigrations, migrate and runserver
 
-
-
 ## Testing
 The tests for the Thrill Seeker Api are listed in a separate file. This file can be found here. [TESTING.md](./TESTING.md)
 
 ## Bugs
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Known bugs
-???????????????????????????
+- No unresolved known errors in the backend
 
 ### Fixed bugs 
-Here is a summary of the identified bugs along with brief descriptions of their fixes. luding the bug report, commits, and the steps taken to resolve the issue.??????????????????????????????????????????
+- I had the error “django.db.utils.IntegrityError: UNIQUE constraint failed: ratings_rating.user_id, ratings_rating.park_id. It was because there was already old data in the database. This has led to a confilt, an error with UNIQUE. The solution was to empty the database and delete the old data.
 
 
 
+## Credits
+### Content
+The content of the website was created by Stephan Sure with the assistance of chat gpt, wikipedia and the websites of the amusementparks. 
+
+### Media
+The the uses images are from different websites. I explayed this already in the design section more deeply.
+Here are my image resouces:
+- [Freepiks](https://de.freepik.com/)
+- [Pexels](https://www.pexels.com/de-de/)
+- [Wikipedia](https://www.wikipedia.org/)
+
+The uses fonts are googlefonts:
+- [googlefonts](https://fonts.google.com/) 
+
+The logo and favicon is created logo:
+- [Logo](https://logo.com/)
+
+The used icons are from:
+- [Fontawesome](https://https://fontawesome.com/icons/)
 
 
-## Credits ????
-email senden für user profile???
-edit token
-[django-versatileimagefield - Custom filters](https://django-versatileimagefield.readthedocs.io/en/2.1/writing_custom_sizers_and_filters.html)
+### Code
+* CI Drango REST FRAMEFORK - API walkthrough - for the backend especially for setting up the project
+* CI codestar mouments walkthrough - especially for setting up the project
+* [Stack overflow](https://stackoverflow.com/) -  in general for all questions about code.
+* [React bootstrap](https://react-bootstrap.netlify.app/) - all questions about react bootstrap.
+* [5 star rating](https://medium.com/@Vaibhavihole31/creating-a-star-rating-bar-in-reactjs-a3f66456d7bb) - for the 5 star rating
+* [5 star rating](https://medium.com/@codeyourthoughts48/add-star-ratings-in-reactjs-33a720bff3a1) - for the 5 star rating
+* [Axios react](https://www.freecodecamp.org/news/axios-react-how-to-make-get-post-and-delete-api-requests/) - detail information about axiox
+* [Axios video](https://www.youtube.com/watch?v=6LyagkoRWYA) - detail information about axiox
+* [React routing](https://blog.logrocket.com/react-router-dom-tutorial-examples/) - detail information about routing
+* [404 page](https://www.digitalocean.com/community/tutorials/how-to-create-a-custom-404-page-in-apache) - code for the 404 page
+* [Invisible content for screen readers](https://webaim.org/techniques/css/invisiblecontent/) - Invisible Content for Screen Readers, lable
+* [React.lazy](https://www.freecodecamp.org/news/how-to-use-react-lazy-and-suspense-for-components-lazy-loading-8d420ecac58/
+) - How to use React.lazy 
+* [Forms in react](https://www.freecodecamp.org/news/how-to-build-forms-in-react/) - how to build forms in react
+* [Styleing filter elements](https://css-tricks.com/almanac/properties/a/appearance/) - styleing filter elements
+
+backend:
+* [Django docs](https://www.djangoproject.com/) -  all questions about django.
+* [Django rest framework](https://www.django-rest-framework.org/) -  all questions about django rest framework,e.g. Permissions, Models, Serializers, Signals, Forms
+* [Token based auth](https://medium.com/django-unleashed/token-based-authentication-and-authorization-in-django-rest-framework-user-and-permissions-347c7cc472e9) - For the Contact Form edit token
+* [Token based auth](https://www.bacancytechnology.com/blog/django-rest-framework-authentication) - Token based auth
+* [Token based auth](https://simpleisbetterthancomplex.com/tutorial/2018/11/22/how-to-implement-token-authentication-using-django-rest-framework.html) - Token based auth
+
+* [Token, universally unique identifier](https://datatracker.ietf.org/doc/html/rfc4122) - For the Contact Form edit token
+
+* [Token, universally unique identifier](https://docs.python.org/3/library/uuid.html) - For the Contact Form edit token
+
+* [Resizing images](https://www.codu.co/articles/resizing-images-and-converting-formats-in-django-1rj9kdho) - for resizing images in the backend 
+
+* [Resizing images](https://stackoverflow.com/questions/66649074/django-rest-frame-work-send-email-from-contact-form) - To send an email via contact form
+
+
+## Acknowledgments
+I like to thank the follow persons for the help during the project:
+
+- My Code Institute mentor Spencer Barriball.
+- The Tutor Support team at Code Institute.
+- Slack pear groupe and and CI cohort.
+- All the people who make their knowledge available for free.
+
+This project is for educational use only and was created for the Code Institute course Full stack software development by Stephan Sure.s://stackoverflow.com/questions/66649074/django-rest-frame-work-send-email-from-contact-form) - To send an email via contact form
