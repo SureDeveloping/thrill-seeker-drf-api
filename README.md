@@ -30,6 +30,10 @@ All other relevant files can be found here: <br>
   * [Known bugs](#known-bugs) ??????
   * [Fixed bugs](#fixed-bugs) ??????
 - [Deployment](#deployment)
+  * [Preparation for heroku depolyment](#preparation-for-heroku-depolyment) 
+  * [Deploying on heroku](#deploying-on-heroku) 
+  * [Fork this repository](#fork-this-repository) 
+  * [Clone this repository](#clone-this-repository) 
 - [Credits](#credits)   ???? 
 
 ## Backend Userstorys
@@ -184,21 +188,90 @@ The PostgreSQL database from Code Institute was used as the database.
 - django-resized==1.0.2 - To resize uploaded images
 
 
-## Deployment
-Deploying the Django backend :
-It is assumed that user accounts exist for the respective services used and that usage rights are available.
 
-1. Set DEBUG in the settings.py file to False to ensure that the application runs in production mode during deployment. 
-2. Log in to the Heroku account, create a new Heroku app. and select a region.
-3. Set the local environment variables, env.py file for the PostgreSQL URL, the Cloudinary URL and the secret Django key. These variables must also be added in the Heroku app under the Config Vars section. To communicate with the Heroku application. Avoid exposing your environment variables in your public repository. Use the Config Vars section in Heroku to securely set your environment variables.
-4. Perform all database migrations and have the current state of the models in the database schema. Commit and push all changes to the GitHub repository. The commands python manage.py makemigrations and python manage.py migrate were used for this. 
-4. In the Heroku dashboard, the created app is connected to the GitHub repository under the "Deployment method" section on the deployment page. The app is then deployed via "Manual deployment" by clicking the Deploy Branch button. After successful deployment, Heroku provides a URL for accessing the live application. 
+## Deployment
+The project was coded with gipod and then deployed on heroku.
+
+### Preparation for heroku depolyment
+* Make sure the requirements.txt are up to date - command pip3 freeze > requirements.txt.
+* Create a procfile for the configuration of the Heroku deployment as a Gunicorn web application.
+* Set ALLOWED_HOSTS, CLIENT_ORIGIN, CLIENT_ORIGIN_DEV in settings.py.
+* Set the local environment variables, env.py file for the PostgreSQL URL, the Cloudinary URL and the secret Django key. 
+* Set DEBUG in the settings.py file to False to ensure that the application runs in production mode during deployment. 
+* Make migrations to have the latest models in the database schema. 
+* Commit and push all changes to the GitHub repository.
+
+
+### Deploying on heroku
+* Log in to your Heroku account.
+* Click on the NEW button and then on "create new app".
+* Choose a unique name for the app.
+* Choose a region, Europe or United States.
+* Click on "create app."
+* Choose the deployment method (For this project GitHub was used).
+* Search for the repository name on GitHub ("thrill-seeker-drf-api").
+* Connect the repository by clicking on Connect
+* Click on the settings tab and then on reveal config vars.
+* Input the required hidden variables
+* Choose Node.js and Python as the designated buildpacks.
+* Click on the Deployment tab
+* Choose the main branch
+* Deploy this project automated or manual (the project was deployed manually)
+* Once a deployment has been successfully completed, a success message is displayed and a view button can be used to view the project in the browser
+
+### Fork this repository
+* Visit the GitHub repository.
+* Click on the Fork button, located in the upper right-hand corner, next to the star button.
+* Once the forking process is complete, a copy of the repository is created in the GitHub account.
+
+### Clone this repository
+* Visit the GitHub repository.  [repository](https://https://github.com/SureDeveloping/thrill-seeker-drf-api)
+* Click the Code button, located in the top right, next to the about page.
+* Choose between 'HTTPS', 'SSH', or 'GitHub CLI' based on your preferred method for cloning.
+* Copy the URL.
+* Open Git Bash.
+* Choose the location where the cloned directory will be saved.
+* Type git clone and paste the URL ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+* Press enter to create the local clone.
+
+### Run this project locally
+* Visit the GitHub repository.  [repository](https://https://github.com/SureDeveloping/thrill-seeker-drf-api)
+* Click the Code button, located in the top right, next to the about page.
+* Click on download Zip.
+* After downloding open the zip file and run it an editor.
+* Create an env.py file for the environment variables.
+* Install PostgreSQL on your machine and open the ports.
+* Create a virtual environment and install the python modules in the pip file.
+* Run python3 makemigrations, migrate and runserver
+
+
 
 ## Testing
 The tests for the Thrill Seeker Api are listed in a separate file. This file can be found here. [TESTING.md](./TESTING.md)
 
 ## Bugs
-?????????????
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Known bugs
 ???????????????????????????
