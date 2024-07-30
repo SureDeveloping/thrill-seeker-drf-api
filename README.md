@@ -10,7 +10,7 @@ All other relevant files can be found here: <br>
 [API Repository](https://github.com/SureDeveloping/thrill-seeker-drf-api) <br>
 
 ## Content
-- [Backend Userstory](#backend-userstory)
+- [Backend userstory](#backend-userstory)
 - [Database](#database)
   * [Bucketlist](#bucketlist)
   * [Contact Form](#contact-form)
@@ -18,23 +18,30 @@ All other relevant files can be found here: <br>
   * [Parks](#parks)
   * [Profiles](#profiles)
   * [Ratings](#ratings)
-- [API Endpoints](#api-endpoints)
-- [Technology Used](#technology-used)
+- [API endpoints](#api-endpoints)
+- [Technology used](#technology-used)
   * [Languages](#languages)
   * [Frameworks](#frameworks)
-  * [Database](#database-1)
-  * [Software and Tools](#software-and-tools)
-  * [Libraries and Packages](#libraries-and-packages)
-- [Testing](#testing)
+  * [Database](#database)
+  * [Libraries and packages](#libraries-and-packages)
+  * [Software and tools](#software-and-tools)
+  
+
 - [Bugs](#bugs)
-  * [Known bugs](#known-bugs) ??????
-  * [Fixed bugs](#fixed-bugs) ??????
+  * [Known bugs](#known-bugs)
+  * [Fixed bugs](#fixed-bugs)
+- [Testing](#testing)
 - [Deployment](#deployment)
   * [Preparation for heroku depolyment](#preparation-for-heroku-depolyment) 
   * [Deploying on heroku](#deploying-on-heroku) 
   * [Fork this repository](#fork-this-repository) 
   * [Clone this repository](#clone-this-repository) 
-- [Credits](#credits)   ???? 
+  * [Run this project locally](#run-this-project-locally) 
+- [Credits](#credits) 
+  * [Content](#content) 
+  * [Media](#media) 
+  * [Code](#code) 
+- [Acknowledgments](#acknowledgments) 
 
 ## Backend Userstorys
 To monitor the work, the following user story was created to create the backend. 
@@ -132,30 +139,32 @@ The following table provides an overview of all API endpoints. It also includes 
 |                | /ratings/{id}/               | DELETE      | Delete         | DestroyAPIView      | Delete a specific rating (owner only)                                           |
 
 
-## Technologies Used
+## Technologies used
 ### Languages
+Frondend: <br>
+- HTML
+- CSS
+- Python
+- JSX (JavaScript XML)
+- Markdown
+
+Backend: <br>
 - Python
 - Markdown
 
 ### Frameworks
-The Django rest framework was used for the API of this project.
+Frondend: <br>
+- React: JavaScript library for creating the Fontend user interfaces. 
+- React-bootstrap: Front-end framework, rebuilt for React with a collection of HTML, CSS, and JavaScript components.
+
+Backend: <br>
+- Django rest framework was used for the API of this project.
 
 ### Database
-The PostgreSQL database from Code Institute was used as the database.
+- The PostgreSQL database from Code Institute was used as the database
 
-### Software and Tools
-- Draw.io - To create the ERD
-- Gitpod - IDE to code the project
-- Git - For version control
-- Heroku – to deploy the website
-- Github - to store the website
-- Excel - to create for the readme and the testing.md tabels
-- Pep8 CI Python Linter - To Linter the python
-- Cloudinary - For managing and saving images
-- Code Institute Postgres Database - PostgreSQL database for this project
-
-
-### Libraries and Packages
+### Libraries and packages
+Backend: <br>
 - asgiref==3.3.4 - ASGI (Asynchronous Server Gateway Interface) specification, used by Django for asynchronous support
 - certifi==2024.6.2 - A collection of root certificates for SSL/TLS verification
 - cffi==1.16.0 - C Foreign Function Interface for Python.
@@ -166,10 +175,11 @@ The PostgreSQL database from Code Institute was used as the database.
 - dj-database-url==0.5.0 - Utility to configure Django database using URLs
 - dj-rest-auth==2.1.9 - Authentication views for Django REST Framework
 - Django==3.2.4 - The core Django web framework
-- django-allauth==0.54.0 - Integrated set of Django applications addressing authentication, registration, account management
+- django-allauth==0.44.0 - Integrated set of Django applications addressing authentication, registration, account management
 - django-cloudinary-storage==0.3.0 - Django package that provides Cloudinary storages for both media and static files
 - django-cors-headers==3.7.0 - Django application for handling the server headers required for Cross-Origin Resource Sharing (CORS)
 - django-filter==2.4.0 - Django application for allowing users to filter querysets dynamically
+- django-resized==1.0.2 - To resize uploaded images
 - djangorestframework==3.12.4 - Powerful and flexible toolkit for building Web APIs in Django
 - djangorestframework-simplejwt==4.7.2 - JSON Web Token authentication plugin for Django REST Framework
 - gunicorn==20.1.0 - Python WSGI HTTP Server for UNIX, often used to deploy Django applications
@@ -185,8 +195,55 @@ The PostgreSQL database from Code Institute was used as the database.
 - requests-oauthlib==1.3.0 - OAuthlib authentication support for Requests
 - six==1.16.0 - Python 2 and 3 compatibility library
 - sqlparse==0.4.1 - Non-validating SQL parser for Python
-- django-resized==1.0.2 - To resize uploaded images
+- urllib3==1.26.19 - Python HTTP library that provides connection pooling, SSL/TLS support, and error handling
 
+Frontend: <br>
+- axios@0.21.4 - Promise-based HTTP client for making API requests.
+- bootstrap@4.6.0 - CSS framework for responsive web design.
+- jwt-decode@3.1.2 - Decodes JSON Web Tokens
+- msw@0.35.0 - Core React library.
+- react-bootstrap@1.6.3 - React components for Bootstrap.
+- react-dom@17.0.2 - React package for working with the DOM.
+- react-infinite-scroll-component@6.1.0 - react-infinite-scroll-component: Component for implementing infinite scroll functionality.
+- react-router-dom@5.3.0 - Routing library for React applications.
+- react-scripts@4.0.3 - Scripts and configuration used by Create React App.
+- react-star-ratings@2.3.0 - Component for displaying star ratings.
+- react@17.0.2 - Library for measuring web vitals metrics.
+- web-vitals@1.1.2 - Mock Service Worker for API mocking in tests.
+
+
+### Software and tools
+- Balsamiq - To create a wireframe.
+- Draw-io - To create an ERD.
+- Gitpod - IDE to code the project
+- Git - For version control.
+- Github - To store the website.
+- Gitpod - As an integrated development environment to write the code.
+- Heroku - To deploy the website.
+- Google Fonts - All fonts used are from google fonts.
+- Google Dev Tools, and Lighthouse - For troubleshooting testing and fixing bugs.
+- Deepl - For translating text.
+- Birme - To change the image to webp format and reducing the size of the images.
+- Tabletomarkdown.com - Used to Create table for markdown out of excel cheats.
+- ChatGPT - To generate the articles, review and texts and about page.
+- Microsoft Excel - To pre create tables for the readme.
+- Pep8 CI Python Linter - To Linter the python
+- W3C HTML Validator - To validate the HTML code.
+- W3C CSS Validator - To validate the CSS code.
+- JS Hint - To detects errors and potential problems in JavaScript code.
+- Cloudinary - Media management platform to save and provide images.
+- Font Awesome - To provide icons for the project.
+
+
+## Bugs
+### Known bugs
+- No unresolved known errors in the backend.
+
+### Fixed bugs 
+- I had the error “django.db.utils.IntegrityError: UNIQUE constraint failed: ratings_rating.user_id, ratings_rating.park_id. It was because there was already old data in the database. This has led to a confilt, an error with UNIQUE. The solution was to empty the database and delete the old data.
+
+## Testing
+The tests for the Thrill Seeker Api are listed in a separate file. This file can be found here. [TESTING.md](./TESTING.md)
 
 
 ## Deployment
@@ -243,18 +300,6 @@ The project was coded with gipod and then deployed on heroku.
 * Install PostgreSQL on your machine and open the ports.
 * Create a virtual environment and install the python modules in the pip file.
 * Run python3 makemigrations, migrate and runserver
-
-## Testing
-The tests for the Thrill Seeker Api are listed in a separate file. This file can be found here. [TESTING.md](./TESTING.md)
-
-## Bugs
-
-### Known bugs
-- No unresolved known errors in the backend
-
-### Fixed bugs 
-- I had the error “django.db.utils.IntegrityError: UNIQUE constraint failed: ratings_rating.user_id, ratings_rating.park_id. It was because there was already old data in the database. This has led to a confilt, an error with UNIQUE. The solution was to empty the database and delete the old data.
-
 
 
 ## Credits
