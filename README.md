@@ -207,6 +207,7 @@ Frontend: <br>
 - react-star-ratings@2.3.0 - Component for displaying star ratings.
 - react@17.0.2 - Library for measuring web vitals metrics.
 - web-vitals@1.1.2 - Mock Service Worker for API mocking in tests.
+- jwt-decode: "^3.1.2", - to add token refresh fix
 
 
 ### Software and tools
