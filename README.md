@@ -25,8 +25,6 @@ All other relevant files can be found here: <br>
   * [Database](#database)
   * [Libraries and packages](#libraries-and-packages)
   * [Software and tools](#software-and-tools)
-  
-
 - [Bugs](#bugs)
   * [Known bugs](#known-bugs)
   * [Fixed bugs](#fixed-bugs)
