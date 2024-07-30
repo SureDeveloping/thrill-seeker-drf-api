@@ -77,7 +77,7 @@ class ContactFormList(generics.ListAPIView):
     def list(self, request, *args, **kwargs):
         if not request.user.is_staff:
             return Response(
-            {"detail": "You do not have permission to this data."},
-            status=status.HTTP_403_FORBIDDEN
-        )
-    return super().list(request, *args, **kwargs)
+                {"detail": "You do not have permission to this data."},
+                status=status.HTTP_403_FORBIDDEN
+            )
+        return super().list(request, *args, **kwargs)
