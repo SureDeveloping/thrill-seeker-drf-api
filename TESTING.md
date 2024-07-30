@@ -11,7 +11,7 @@ Return back to the [README.md](README.md) file.
 
 
 ## Code Validation 
-The python code of the backend was checked by a Pyton linter. The code Institute python linter was used for this purpes.
+The python code of the backend was checked by a Pyton linter. The Code Institute python linter was used for this purpes.
 [CI Python Linter](https://pep8ci.herokuapp.com/) 
 
 ### Backend

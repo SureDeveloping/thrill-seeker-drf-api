@@ -41,38 +41,37 @@ All other relevant files can be found here: <br>
   * [Code](#code) 
 - [Acknowledgments](#acknowledgments) 
 
-## Backend Userstorys
+## Backend userstorys
 To monitor the work, the following user story was created to create the backend. 
 
-| User Story                                                                                                                                        | Acceptance Cretary                                                                                                                                                                                                                                  | Tasks                                                                                                               | Moscow      |
-| ------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ----------- |
-| As an admin I need a stable API backend for my website to process the data entered on my website so i can conect the frontend to it.              | AC1: The repository  with all necessary libraries was set up                                                                                                                                                                                        | T1: Create a repository and install all necessary libraries<br>T2: Connected database to the backend                | Must have   |
-| As an admin I need a model serializer view and urls for the parks app so i can conect it to the frontend.                                         | AC1: The backend for the park app works on the local server and on the deployed heroku version<br>AC2: The CRUD function is working                                                                                                                 | T1: Create the model<br>T2: Create the view<br>T3: Create the serializer<br>T4: Create the URLs<br>T5: Test the app | Must have   |
-| As an admin I need a model serializer view and urls for the Bucketlist app  so i can conect it to the frontend.                                   | AC1: The backend for the bucketlist app works on the local server  and on the deployed heroku version                                                                                                                                               | T1: Create the model<br>T2: Create the view<br>T3: Create the serializer<br>T4: Create the URLs<br>T5: Test the app | Must have   |
-| As an admin I need a model serializer view and urls for the rating app  so i can conect it to the frontend.                                       | AC1: The backend for the rating app works on the local server  and on the deployed heroku version                                                                                                                                                   | T1: Create the model<br>T2: Create the view<br>T3: Create the serializer<br>T4: Create the URLs<br>T5: Test the app | Must have   |
-| As an admin I need a model serializer view and urls for the like app  so i can conect it to the frontend.                                         | AC1: The backend for the like app works on the local server and on the deployed heroku version                                                                                                                                                      | T1: Create the model<br>T2: Create the view<br>T3: Create the serializer<br>T4: Create the URLs<br>T5: Test the app | Could have  |
-| As an admin I need a model serializer view and urls for the Contact form app  so i can conect it to the frontend.                                 | AC1: The backend for the userprofile app works on the local server and on the deployed heroku version also for not loggin users.<br>AC2: I can CRUD the contact form data. Review the data , update, delete it only right after i created the form. | T1: Create the model<br>T2: Create the view<br>T3: Create the serializer<br>T4: Create the URLs<br>T5: Test the app | Could have  |
-| As an admin I need a model serializer view and urls for the Userprofile app  so i can set conect the frontend to it.                              | AC1: The backend for the userprofile app works on the local server and on the deployed heroku version                                                                                                                                               | T1: Create the model<br>T2: Create the view<br>T3: Create the serializer<br>T4: Create the URLs<br>T5: Test the app | Could have  |
-| As admin I want to make sure that only the owner of a user profile can change it and has to authenticate himself to prevent unauthorized changes. | AC1: The backend for the user authentication is working.<br>AC2: Only owners of a profile can change this<br>AC3: Every not loggin in user can read all profiles                                                                                    | T1: Add auth, permission function to profiles app<br>T2: Test the auth, permisson function                          | Must have   |
-| As a user, I would like to see all my set bucketlist items so that I can plan my nest park visit                                                  | AC1: In the backend, a field indicates whether a park is on a user's bucketlist.<br>AC2: There is a fild on my Profile which shows the number of my buxketlist items                                                                                | T1:  Add bucketlist count                                                                                           | Should have |
-| As a user, I would like to see all my set likes so that I can read the corresponding ratings again                                                | AC1: In the backend, a field indicates whether a ratings is liked by a user.<br>AC2: There is a feild on my Profile which shows the number of my likes                                                                                              | T1:: Add like count                                                                                                 | Should have |
-| As a user, I would like to see all my set ratings so that I can update them with new experiences                                                  | AC1: In the backend, a field indicates whether a a park is rated by a user<br>AC2: There is a fild on my Profile which shows the number of my ratings                                                                                               | <br>T1: Add ratings count                                                                                           | Should have |
-| As a user, I would like search the parks by the name to find a park faster if it exsists.                                                         | <br>AC1: I can search parks by name, author(username), country                                                                                                                                                                                      | T1: Add search function                                                                                             | Should have |
-| As a user, I would see ratings and bucketlist count on the park page to get a better opinion on that park                                         | AC1: The bucketlist count is on the park backend page<br>AC2: The rating count is on the parks backend page                                                                                                                                         | T1: Add bucketlist count<br>T2: Add rating count                                                                    | Should have |
-
+| Epic        | User Story                                                                                                                                         | Acceptance Cretary                                                                                                                                                                                                                                  | Tasks                                                                                                                        | Moscow      |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| Backend_API | As an admin, I need a stable API backend for my website to process the data entered on my website so I can connect the frontend to it.             | AC1: The repository  with all necessary libraries was set up.                                                                                                                                                                                       | T1: Create a repository and install all necessary libraries.<br>T2: Connected database to the backend                        | Must have   |
+| Backend_API | As an admin, I need a model serializer view and urls for the parks app so I can connect it to the frontend.                                        | AC1: The backend for the park app works on the local server and on the deployed heroku version.<br>AC2: The CRUD function is working.                                                                                                               | T1: Create the model<br>T2: Create the view<br>T3: Create the serializer<br>T4: Create the URLs<br>T5: Test the app          | Must have   |
+| Backend_API | As an admin I need a model serializer view and urls for the Bucketlist app so i can connect it to the frontend.                                    | AC1: The backend for the bucketlist app works on the local server  and on the deployed heroku version                                                                                                                                               | T1: Create the model<br>T2: Create the view<br>T3: Create the serializer<br>T4: Create the URLs<br>T5: Test the app          | Must have   |
+| Backend_API | As an admin I need a model serializer view and urls for the rating app  so i can connect it to the frontend.                                       | AC1: The backend for the rating app works on the local server  and on the deployed heroku version                                                                                                                                                   | T1: Create the model<br>T2: Create the view<br>T3: Create the serializer<br>T4: Create the URLs<br>T5: Test the app          | Must have   |
+| Backend_API | As an admin I need a model serializer view and urls for the like app  so i can connect it to the frontend.                                         | AC1: The backend for the like app works on the local server and on the deployed heroku version                                                                                                                                                      | T1: Create the model<br>T2: Create the view<br>T3: Create the serializer<br>T4: Create the URLs<br>T5: Test the app          | Could have  |
+| Backend_API | As an admin, I need a model serializer view and urls for the contact form app so i can connect it to the frontend.                                 | AC1: The backend for the userprofile app works on the local server and on the deployed heroku version also for not loggin users.<br>AC2: I can CRUD the contact form data. Review the data , update, delete it only right after i created the form. | T1: Create the model<br>T2: Create the view<br>T3: Create the serializer<br>T4: Create the URLs<br>T5: Test the app          | Could have  |
+| Backend_API | As an admin, I need a model serializer view and urls for the userprofile app so I can connect the frontend to it.                                  | AC1: The backend for the userprofile app works on the local server and on the deployed heroku version.                                                                                                                                              | T1: Create the model<br>T2: Create the view<br>T3: Create the serializer<br>T4: Create the URLs<br>T5: Test the app          | Could have  |
+| Backend_API | As admin, I want to make sure that only the owner of a user profile can change it and has to authenticate himself to prevent unauthorized changes. | AC1: The backend for the user authentication is working.<br>AC2: Only owners of a profile can change this<br>AC3: Every not loggin user can read all profiles.                                                                                      | T1: Add authentication and permission functions to the profiles app.<br>T2: Test the authentication and permission function. | Must have   |
+| Backend_API | As a user, I would like to see all my bucketlist items that I can plan my next park visit.                                                         | AC1: In the backend, a field indicates whether a park is on a user's bucketlist.<br>AC2: There is a field on my profile that shows the number of my bucketlist items.                                                                               | T1:  Add bucketlist count                                                                                                    | Should have |
+| Backend_API | As a user, I would like to see all my set likes that I can read the corresponding ratings again.                                                   | AC1: In the backend, a field indicates whether a rating is liked by a user.<br>AC2: There is a field on my profile that shows the number of my likes.                                                                                               | T1:: Add like count                                                                                                          | Should have |
+| Backend_API | As a user, I would like to see all my ratings that I can update them with new experiences.                                                         | AC1: In the backend, a field indicates whether a park is rated by a user.<br>AC2: There is a field on my profile that shows the number of my ratings.                                                                                               | <br>T1: Add ratings count                                                                                                    | Should have |
+| Backend_API | As a user, I would like to search the parks by the name to find a park faster if it exists.                                                        | <br>AC1: I can search parks by name, author (username), country.                                                                                                                                                                                    | T1: Add search function                                                                                                      | Should have |
+| Backend_API | As a user, I would see ratings and bucketlist count on the park page to get a better opinion on that park.                                         | AC1: The bucketlist count is on the park backend page.<br>AC2: The rating count is on the parks backend page.                                                                                                                                       | T1: Add bucketlist count<br>T2: Add rating count                                                                             | Should have |
 
 ## Database
-This ERD Entity-Relationship Diagramm was created for the Thrill Seeker project. All the models serve the project gole and contribute to its success with their functions.
+This ERD Entity-Relationship Diagramm was created for the Thrill Seeker project. All the models serve the project goal and contribute to its success with their functions.
 ![Entity Relationship Diagramm](./documentationfiles/ERD.png)
 
 ### Bucketlist: 
 This model is a list of parks that a user would like to visit. In other words, a watch list for a later date.  It is linked to the user model and the park model. 
 
 ### Contact Form: 
-Visitors to the website can use the contact form model to send a message that is saved. The model contains first_name, last_name, email, subject, message, last_updated and an edit_token. This allows the data to be updated once, after the user has checked it. The edit token is used for verification and secure the model against misuse.
+Visitors to the website can use the contact form model to send a message that is saved. The model contains first_name, last_name, email, subject, message, last_updated and an edit_token. This allows the data to be updated once, after the user has checked it. The edit token is used for verification and to secure the model against misuse.
 
 ### Likes: 
-This model contains the Likes. These can be created by logged-in users for ratings. It is connected to the user models via and to the rating via a foreign key. It also contains a "created at" field. The likes app is not yet available in the front. For the future, this has been integrated into the backend so that this function can be added quickly.
+This model contains the Likes. These can be created by logged-in users for ratings. It is connected to the user models via and to the rating via a foreign key. It also contains a "created at" field. The Likes app is not yet available in the front. For the future, this has been integrated into the backend so that this function can be added quickly.
 
 ### Parks: 
 The park model presents the articles that can be created by super users (is staff) and it is linked to the user as a foreign key. It contains the name of the park, a description, a picture, the number of rides, the number of roller coasters, the thrill factor, the overall rating and the website of the park. 
@@ -159,7 +158,7 @@ Backend: <br>
 - Django rest framework was used for the API of this project.
 
 ### Database
-- The PostgreSQL database from Code Institute was used as the database
+- The PostgreSQL database from Code Institute was used as the database.
 
 ### Libraries and packages
 Backend: <br>
@@ -170,7 +169,7 @@ Backend: <br>
 - cloudinary==1.33.0 - Python SDK for Cloudinary, a cloud service for image and video management
 - cryptography==3.4.8 - Library for various cryptographic operations
 - defusedxml==0.7.1 - XML bomb protection for Python stdlib modules
-- dj-database-url==0.5.0 - Utility to configure Django database using URLs
+- dj-database-url==0.5.0 - Utility to configure Django Database using URLs
 - dj-rest-auth==2.1.9 - Authentication views for Django REST Framework
 - Django==3.2.4 - The core Django web framework
 - django-allauth==0.44.0 - Integrated set of Django applications addressing authentication, registration, account management
@@ -221,14 +220,14 @@ Frontend: <br>
 - Google Fonts - All fonts used are from google fonts.
 - Google Dev Tools, and Lighthouse - For troubleshooting testing and fixing bugs.
 - Deepl - For translating text.
-- Birme - To change the image to webp format and reducing the size of the images.
+- Birme - To change the image to webp format and reduce the size of the images.
 - Tabletomarkdown.com - Used to Create table for markdown out of excel cheats.
-- ChatGPT - To generate the articles, review and texts and about page.
+- ChatGPT - To generate text content for the website.
 - Microsoft Excel - To pre create tables for the readme.
-- Pep8 CI Python Linter - To Linter the python
+- Pep8 CI Python Linter - To Linter the Python
 - W3C HTML Validator - To validate the HTML code.
 - W3C CSS Validator - To validate the CSS code.
-- JS Hint - To detects errors and potential problems in JavaScript code.
+- JS Hint - To detect errors and potential problems in JavaScript code.
 - Cloudinary - Media management platform to save and provide images.
 - Font Awesome - To provide icons for the project.
 
@@ -238,14 +237,14 @@ Frontend: <br>
 - No unresolved known errors in the backend.
 
 ### Fixed bugs 
-- I had the error “django.db.utils.IntegrityError: UNIQUE constraint failed: ratings_rating.user_id, ratings_rating.park_id. It was because there was already old data in the database. This has led to a confilt, an error with UNIQUE. The solution was to empty the database and delete the old data.
+- I had the error “django.db.utils.IntegrityError: UNIQUE constraint failed: ratings_rating.user_id, ratings_rating.park_id. It was because there was already old data in the database. This has led to a conflict, an error with UNIQUE. The solution was to empty the database and delete the old data.
 
 ## Testing
 The tests for the Thrill Seeker Api are listed in a separate file. This file can be found here. [TESTING.md](./TESTING.md)
 
 
 ## Deployment
-The project was coded with gipod and then deployed on heroku.
+The project was coded with Gipod and then deployed on Heroku.
 
 ### Preparation for heroku depolyment
 * Make sure the requirements.txt are up to date - command pip3 freeze > requirements.txt.
@@ -272,7 +271,7 @@ The project was coded with gipod and then deployed on heroku.
 * Click on the Deployment tab
 * Choose the main branch
 * Deploy this project automated or manual (the project was deployed manually)
-* Once a deployment has been successfully completed, a success message is displayed and a view button can be used to view the project in the browser
+* Once a deployment has been successfully completed, a success message is displayed and a view button can be used to view the project in the browser.
 
 ### Fork this repository
 * Visit the GitHub repository.
@@ -280,8 +279,8 @@ The project was coded with gipod and then deployed on heroku.
 * Once the forking process is complete, a copy of the repository is created in the GitHub account.
 
 ### Clone this repository
-* Visit the GitHub repository.  [repository](https://https://github.com/SureDeveloping/thrill-seeker-drf-api)
-* Click the Code button, located in the top right, next to the about page.
+* Visit the GitHub repository. [repository](https://https://github.com/SureDeveloping/thrill-seeker-drf-api)
+* Click the Code button, located in the top right, next to the About page.
 * Choose between 'HTTPS', 'SSH', or 'GitHub CLI' based on your preferred method for cloning.
 * Copy the URL.
 * Open Git Bash.
@@ -290,28 +289,28 @@ The project was coded with gipod and then deployed on heroku.
 * Press enter to create the local clone.
 
 ### Run this project locally
-* Visit the GitHub repository.  [repository](https://https://github.com/SureDeveloping/thrill-seeker-drf-api)
-* Click the Code button, located in the top right, next to the about page.
+* Visit the GitHub repository. [repository](https://https://github.com/SureDeveloping/thrill-seeker-drf-api)
+* Click the Code button, located in the top right, next to the About page.
 * Click on download Zip.
-* After downloding open the zip file and run it an editor.
+* After downloding, open the zip file and run it an editor.
 * Create an env.py file for the environment variables.
 * Install PostgreSQL on your machine and open the ports.
-* Create a virtual environment and install the python modules in the pip file.
+* Create a virtual environment and install the Python modules in the pip file.
 * Run python3 makemigrations, migrate and runserver
 
 
 ## Credits
 ### Content
-The content of the website was created by Stephan Sure with the assistance of chat gpt, wikipedia and the websites of the amusementparks. 
+The content of the website was created by Stephan Sure with the assistance of Chat GPT, Wikipedia and the websites of the amusement parks. 
 
 ### Media
-The the uses images are from different websites. I explayed this already in the design section more deeply.
-Here are my image resouces:
+The used images are from different websites. I explained this already in the design section more deeply.
+Here are my image resources:
 - [Freepiks](https://de.freepik.com/)
 - [Pexels](https://www.pexels.com/de-de/)
 - [Wikipedia](https://www.wikipedia.org/)
 
-The uses fonts are googlefonts:
+The used fonts are googlefonts:
 - [googlefonts](https://fonts.google.com/) 
 
 The logo and favicon is created logo:
@@ -322,7 +321,7 @@ The used icons are from:
 
 
 ### Code
-* CI Drango REST FRAMEFORK - API walkthrough - for the backend especially for setting up the project
+* CI Drango REST FRAMEFORK - API walkthrough - for the backend, especially for setting up the project
 * CI codestar mouments walkthrough - especially for setting up the project
 * [Stack overflow](https://stackoverflow.com/) -  in general for all questions about code.
 * [React bootstrap](https://react-bootstrap.netlify.app/) - all questions about react bootstrap.
@@ -351,15 +350,13 @@ backend:
 
 * [Resizing images](https://www.codu.co/articles/resizing-images-and-converting-formats-in-django-1rj9kdho) - for resizing images in the backend 
 
-* [Resizing images](https://stackoverflow.com/questions/66649074/django-rest-frame-work-send-email-from-contact-form) - To send an email via contact form
-
 
 ## Acknowledgments
-I like to thank the follow persons for the help during the project:
+I like to thank the following persons for their help during the project:
 
-- My Code Institute mentor Spencer Barriball.
-- The Tutor Support team at Code Institute.
-- Slack pear groupe and and CI cohort.
+- My Code Institute mentor, Spencer Barriball.
+- The Tutor support team at Code Institute.
+- Slack pear group and CI cohort.
 - All the people who make their knowledge available for free.
 
-This project is for educational use only and was created for the Code Institute course Full stack software development by Stephan Sure.s://stackoverflow.com/questions/66649074/django-rest-frame-work-send-email-from-contact-form) - To send an email via contact form
+This project is for educational use only and was created for the Code Institute course Full Stack Software Development by Stephan Sure.
