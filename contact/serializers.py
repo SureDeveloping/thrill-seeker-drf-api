@@ -5,7 +5,6 @@ from django.core.mail import send_mail
 
 ADMIN_EMAIL = os.environ.get("EMAIL_ADDRESS")
 
-
 class ContactFormSerializer(serializers.ModelSerializer):
     """
     Contact form serializer.
@@ -27,23 +26,23 @@ class ContactFormSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Invalid subject choice.")
         return value
 
-        extra_kwargs = {
-            "first_name": {
-                "error_messages": {"blank": "This field is required"}
-            },
-            "last_name": {
-                "error_messages": {"blank": "This field is required"}
-            },
-            "email": {
-                "error_messages": {"blank": "This field is required"}
-            },
-            "subject": {
-                "error_messages": {"blank": "This field is required"}
-            },
-            "message": {
-                "error_messages": {"blank": "This field is required"}
-            },
-        }
+    extra_kwargs = {
+        "first_name": {
+            "error_messages": {"blank": "This field is required"}
+        },
+        "last_name": {
+            "error_messages": {"blank": "This field is required"}
+        },
+        "email": {
+            "error_messages": {"blank": "This field is required"}
+        },
+        "subject": {
+            "error_messages": {"blank": "This field is required"}
+        },
+        "message": {
+            "error_messages": {"blank": "This field is required"}
+        },
+    }
 
     def create(self, validated_data):
         """
